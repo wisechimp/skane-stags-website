@@ -3,6 +3,8 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.css';
 //import { Link } from "gatsby"
 
+import swedenFlag from "../images/sweden-flag-tn.png"
+
 export default () => (
   <Navbar bg="dark" expand="md" variant="dark">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,5 +25,11 @@ export default () => (
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>
+    <Nav.Link href="/sv/">
+      <img
+        src={swedenFlag}
+        alt="Sweden Flag"
+      />
+    </Nav.Link>
   </Navbar>
 )
