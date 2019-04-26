@@ -8,11 +8,33 @@ img.logo {
   max-width: 300px;
   max-height: 300px;
   min-width: 150px;
-  mix-height: 150px;
+  min-height: 150px;
+}
+p.carouselCaption {
+  background-color: darkgray;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+}
+.bodyContent {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 .brandname {
 	order: 1;
+  padding-left: 1em;
+  padding-right: 1em;
   min-height: 150px;
+  text-align: center;
+}
+.carousel-indicators li {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-bottom: 2.5em;
+    background-color: #ffffff;
 }
 .headerContainer {
 	width: 100%;
