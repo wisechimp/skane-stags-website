@@ -1,7 +1,5 @@
 import React from "react"
 import { Nav, Navbar, NavDropdown } from "react-bootstrap"
-import 'bootstrap/dist/css/bootstrap.css';
-//import { Link } from "gatsby"
 
 import swedenFlag from "../images/sweden-flag-tn.png"
 
