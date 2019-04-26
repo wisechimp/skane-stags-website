@@ -4,7 +4,7 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 import swedenFlag from "../images/sweden-flag-tn.png"
 
 export default () => (
-  <Navbar bg="dark" expand="md" variant="dark">
+  <Navbar bg="dark" expand="sm" variant="dark">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav>

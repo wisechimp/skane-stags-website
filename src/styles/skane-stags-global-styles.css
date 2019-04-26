@@ -1,6 +1,3 @@
-html {
-  background-color: red;
-}
 h1 {
   font-size: 2em;
   margin-block-start: 0.67em;
@@ -44,7 +41,7 @@ img.logo {
 }
 
 /*Reorders logo and title off phone*/
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 576px) {
 	.brandname {
 		order: 0;
 		width: 66.7%;
@@ -55,9 +52,9 @@ img.logo {
 	}
 }
 /*Adds margin on large screens*/
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 996px) {
 	body {
-		max-width: 960px;
+		max-width: 996px;
 		margin: auto;
 	}
 }
