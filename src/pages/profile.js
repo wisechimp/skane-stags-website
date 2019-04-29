@@ -4,6 +4,6 @@ import Layout from "../components/layout"
 
 export default () => (
   <Layout>
-    <h1>Fixtures</h1>
+    <h1>Player Profile</h1>
   </Layout>
 )
