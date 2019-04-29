@@ -9,12 +9,23 @@ img.logo {
   max-height: 300px;
   min-width: 150px;
   min-height: 150px;
+  padding-top: 1em;
 }
 p.carouselCaption {
   background-color: darkgray;
   color: white;
   padding: 0.5em;
   text-align: center;
+}
+p.playerCardText {
+  margin-bottom: 0px;
+}
+.advert {
+	display: block;
+	margin: 0 auto;
+	max-height: 150px;
+	max-width: 100%;
+  padding-bottom: 1em;
 }
 .bodyContent {
   padding-left: 1em;
@@ -36,6 +47,13 @@ p.carouselCaption {
     margin-bottom: 2.5em;
     background-color: #ffffff;
 }
+.footer {
+	display: block;
+	text-align: center;
+	margin: auto;
+  padding-top: 1em;
+	width: 60%;
+}
 .headerContainer {
 	width: 100%;
 	display: flex;
@@ -47,6 +65,22 @@ p.carouselCaption {
 	display: block;
 	margin: auto;
 	width: 100%;
+}
+.playerCard {
+  margin: 1em;
+  max-width: 200px;
+}
+.playerFlag {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+}
+.playerInfo{
+  width: 165px;
+}
+.playerInfoContainer {
+  display: flex;
 }
 .videoWrapper {
 	position: relative;
