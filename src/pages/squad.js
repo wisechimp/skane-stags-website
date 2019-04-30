@@ -1,22 +1,68 @@
-import React from "react"
+import React, { Component } from "react"
+import get from "lodash/get"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import PlayerCard from "../components/playercard"
-import stagsLogo from "../images/skanestagslogo.png"
-import swedenFlag from "../images/sweden-flag-tn.png"
+// import stagsLogo from "../images/skanestagslogo.png"
+// import swedenFlag from "../images/sweden-flag-tn.png"
 
-export default () => (
+class Squad extends Component {
+  render() {
+    const playerProfiles = get(this, 'props.data.allSquadListJson.edges')
+    console.log(playerProfiles)
 
-    <Layout>
-      <h1>Squad</h1>
-      <PlayerCard
-        imgSrc={stagsLogo}
-        imgAlt="Player's photo"
-        playerName="Player 1"
-        playerPositiion="Prop"
-        playersNat={swedenFlag}
-        playersFlag="Player's Flag"
-      />
-    </Layout>
-  )
+    return (
+      <Layout>
+        <h1>Squad</h1>
+        <div className="playerCardsContainer">
+          {playerProfiles.map(({ node }) => {
+            return (
+              <PlayerCard
+                key={node.id}
+                imgSrc={node.imageSrc.childImageSharp.fluid}
+                imgAlt={node.imageAlt}
+                playerName={node.name}
+                playerPositiion={node.position}
+                playersNat={node.flagSrc.childImageSharp.fixed}
+                playersFlag={node.flagAlt}
+              />
+            )
+          })}
+        </div>
+      </Layout>
+    )
+  }
+}
+
+export default Squad
+
+export const playerQuery = graphql`
+  query {
+    allSquadListJson {
+      edges {
+        node {
+          id
+          name
+          position
+          imageSrc {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          imageAlt
+          flagSrc {
+            childImageSharp {
+              fixed {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+          flagAlt
+        }
+      }
+    }
+  }
+`

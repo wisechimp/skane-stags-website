@@ -67,8 +67,13 @@ p.playerCardText {
 	width: 100%;
 }
 .playerCard {
-  margin: 1em;
+  margin: auto;
   max-width: 200px;
+}
+.playerCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1em;
 }
 .playerFlag {
   align-items: center;

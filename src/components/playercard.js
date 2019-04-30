@@ -1,9 +1,10 @@
 import React from "react"
+import Img from "gatsby-image"
 
 export default (props) => (
   <div className="playerCard">
-    <img
-      src={props.imgSrc}
+    <Img
+      fluid={props.imgSrc}
       alt={props.imgAlt}
       width="200"
       height="200"
@@ -16,8 +17,8 @@ export default (props) => (
         </p>
       </div>
       <div className="playerFlag">
-        <img
-          src={props.playersNat}
+        <Img
+          fixed={props.playersNat}
           alt={props.playersFlag}
           width="30px"
           height="20px"
