@@ -53,7 +53,7 @@ export const playerQuery = graphql`
           imageAlt
           flagSrc {
             childImageSharp {
-              fixed {
+              fixed(width: 30, height: 20) {
                 ...GatsbyImageSharpFixed
               }
             }

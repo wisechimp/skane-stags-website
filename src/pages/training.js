@@ -4,15 +4,9 @@ import Layout from "../components/layout"
 import Video from "../components/video"
 import TrainingPoster from "../images/2019stagstrainingen.png"
 
-  const posterStyle = {
-    display: "block",
-    margin: "auto",
-    maxWidth: "100%"
-  }
-
 export default () => (
   <Layout>
-    <img style={posterStyle}
+    <img className="poster"
       src={TrainingPoster}
       alt="Training poster for the Skane Stags"
     />

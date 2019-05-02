@@ -5,14 +5,19 @@ import Video from "../components/video"
 
 export default () => (
   <Layout>
-    <h1>Rugby League?</h1>
-    <p>Check out the video below for a quick introduction to rugby league:</p>
+    <h1>What's Rugby League?</h1>
+    <div className="bodyContent">
+      <p>Check out the video below for a quick introduction to rugby league:</p>
+    </div>
     <Video
       title="Rugby League explained for beginners."
       width="1280"
       height="720"
       src="https://www.youtube.com/embed/vFwHtFJarhE"
     />
-    <p>Rugby League originated in the north of England in 1895.</p>
+    <div className="bodyContent">
+      <h3><i>A Brief History</i></h3>
+      <p>Rugby League originated in the north of England in 1895.</p>
+    </div>
   </Layout>
 )

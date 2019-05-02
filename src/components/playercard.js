@@ -20,8 +20,6 @@ export default (props) => (
         <Img
           fixed={props.playersNat}
           alt={props.playersFlag}
-          width="30px"
-          height="20px"
         />
       </div>
     </div>
