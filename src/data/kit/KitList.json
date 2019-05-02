@@ -1,23 +1,44 @@
 [
   {
     "id": "1",
-    "name": "Polo Shirt",
-    "description": "A polo shirt",
-    "imageSrc": "images/skanestagspolo.png",
-    "imageAlt": "Player's photo"
+    "name": "Home Rugby Shirt",
+    "description": "As worn by the players this is a hard wearing, tight fit shirt suitable for athletic figures!",
+    "imageSrc": "images/skanestagsshirt.png",
+    "imageAlt": "Skane Stags Home rugby shirt"
   },
   {
     "id": "2",
-    "name": "Rugby Shirt",
-    "description": "A rugby shirt",
-    "imageSrc": "images/skanestagsshirt.png",
-    "imageAlt": "Player's photo"
+    "name": "Home Match Shorts",
+    "description":"Also match quality kit, ideal for training or lounging by the beach during the Swedish summer.",
+    "imageSrc":"images/skanestagsshorts.png",
+    "imageAlt":"Skane Stags Home rugby shorts"
   },
   {
     "id": "3",
-    "name": "Singlet",
-    "description": "A singlet",
+    "name": "Players' Polo Shirt",
+    "description": "Mimicing the design of the rugby shirt but with a looser more comfortable fit.",
+    "imageSrc": "images/skanestagspolo.png",
+    "imageAlt": "Skane Stags Polo shirt"
+  },
+  {
+    "id": "4",
+    "name": "Training Singlet",
+    "description": "Essential for training on the pitch or in the gym. Get those magnificent guns on display.",
     "imageSrc": "images/skanestagssinglet.png",
-    "imageAlt": "Player's photo"
+    "imageAlt": "Skane Stags training singlet"
+  },
+  {
+    "id": "5",
+    "name": "Beanie Hat",
+    "description": "Keep your head warm while training in the winter, and most of the rest of the year!",
+    "imageSrc": "images/skanestagslogo.png",
+    "imageAlt": "Skane Stags Beanie Hat"
+  },
+  {
+    "id": "6",
+    "name": "Bobble Hat",
+    "description": "It does everything the beanie does plus it has a bobble.",
+    "imageSrc": "images/skanestagslogo.png",
+    "imageAlt": "Skane Stags Bobble Hat"
   }
 ]

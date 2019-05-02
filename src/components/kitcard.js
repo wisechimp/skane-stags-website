@@ -9,7 +9,7 @@ export default (props) => (
       width="300"
     />
     <div>
-      <p>
+      <p className="playerCardText">
         <b>{props.kitItemName}</b><br />
         {props.kitItemDescription}
       </p>
