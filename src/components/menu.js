@@ -22,6 +22,7 @@ export default () => (
           <NavDropdown.Item href="/partners/">Partners</NavDropdown.Item>
           <NavDropdown.Item href="/contact/">Contact</NavDropdown.Item>
         </NavDropdown>
+        <Nav.Link href="/merchandise/">Kit</Nav.Link>
       </Nav>
     </Navbar.Collapse>
     <Nav.Link href="/sv/">
