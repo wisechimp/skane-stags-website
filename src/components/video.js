@@ -1,7 +1,9 @@
 import React from "react"
 
+import styles from "./video.module.css"
+
 export default (props) => (
-  <div className="videoWrapper">
+  <div className={styles.videoWrapper}>
     <iframe
       title={props.title}
       width={props.width}

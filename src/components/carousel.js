@@ -1,6 +1,8 @@
 import React from "react"
 import { Carousel } from "react-bootstrap"
 
+import styles from "./carousel.module.css"
+
 export default (props) => (
   <Carousel fade="true">
     <Carousel.Item>
@@ -9,7 +11,7 @@ export default (props) => (
         src={props.firstSlide}
         alt={props.firstSlideAlt}
       />
-      <p className="carouselCaption">{props.firstSlideCaption}</p>
+      <p className={styles.carouselCaption}>{props.firstSlideCaption}</p>
     </Carousel.Item>
     <Carousel.Item>
       <img
@@ -17,7 +19,7 @@ export default (props) => (
         src={props.secondSlide}
         alt={props.secondSlideAlt}
       />
-      <p className="carouselCaption">{props.secondSlideCaption}</p>
+      <p className={styles.carouselCaption}>{props.secondSlideCaption}</p>
     </Carousel.Item>
     <Carousel.Item>
       <img
@@ -25,7 +27,7 @@ export default (props) => (
         src={props.thirdSlide}
         alt={props.thirdSlideAlt}
       />
-      <p className="carouselCaption">{props.thirdSlideCaption}</p>
+      <p className={styles.carouselCaption}>{props.thirdSlideCaption}</p>
     </Carousel.Item>
   </Carousel>
 )
