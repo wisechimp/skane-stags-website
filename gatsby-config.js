@@ -10,16 +10,24 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `squad`,
-        path: `${__dirname}/src/data/squadlist`,
+        name: `kit`,
+        path: `${__dirname}/src/data/kit`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `kit`,
-        path: `${__dirname}/src/data/kit`,
+        name: `results`,
+        path: `${__dirname}/src/data/results`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `squad`,
+        path: `${__dirname}/src/data/squadlist`,
+      },
+    },
+
   ],
 }

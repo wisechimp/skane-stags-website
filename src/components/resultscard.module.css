@@ -1,0 +1,26 @@
+p {
+  margin-bottom: 0;
+}
+.awayTeam {
+  text-align: right;
+  font-weight: bold;
+  width: 40%;
+}
+.homeTeam {
+  text-align: left;
+  font-weight: bold;
+  width: 40%;
+}
+.matchDetails{
+  font-size: 0.8em;
+  font-style: italic;
+    text-align: center;
+}
+.resultContainer {
+  display: flex;
+  padding: 0.5em;
+}
+.score {
+  text-align: center;
+  width: 20%;
+}
