@@ -1,0 +1,19 @@
+p.playerCardText {
+  margin-bottom: 0px;
+}
+.playerCard {
+  margin: auto;
+  max-width: 200px;
+}
+.playerFlag {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+}
+.playerInfo {
+  width: 165px;
+}
+.playerInfoContainer {
+  display: flex;
+}

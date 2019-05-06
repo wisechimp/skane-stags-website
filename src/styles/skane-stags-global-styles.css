@@ -2,40 +2,14 @@ h1 {
   font-size: 2em;
   margin: 0.5em;
 }
-img.logo {
-  margin: auto;
-  max-width: 300px;
-  max-height: 300px;
-  min-width: 150px;
-  min-height: 150px;
-  padding-top: 1em;
-}
 img.poster {
   display: block;
   margin: auto;
   max-width: 100%;
 }
-p.playerCardText {
-  margin-bottom: 0px;
-}
-.advert {
-	display: block;
-	margin: 0 auto;
-	max-height: 150px;
-	max-width: 100%;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
 .bodyContent {
   padding-left: 1em;
   padding-right: 1em;
-}
-.brandname {
-	order: 1;
-  padding-left: 1em;
-  padding-right: 1em;
-  min-height: 150px;
-  text-align: center;
 }
 .carousel-control-next {
   margin-bottom: 2.5em;
@@ -44,66 +18,23 @@ p.playerCardText {
   margin-bottom: 2.5em;
 }
 .carousel-indicators li {
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    margin-left: 6px;
-    margin-right: 6px;
-    margin-bottom: 2.5em;
-    background-color: #ffffff;
-}
-.footer {
-	display: block;
-	text-align: center;
-	margin: auto;
-  padding-top: 1em;
-	width: 60%;
-}
-.headerContainer {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-  padding-bottom: 1em;
-}
-.logo {
-  order: 0;
-	display: block;
-	margin: auto;
-	width: 100%;
-}
-.playerCard {
-  margin: auto;
-  max-width: 200px;
+  background-color: rgba(201, 76, 76, 0.0);
+  background-image: url(../images/balls.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 2.5em;
 }
 .playerCardsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 1em;
 }
-.playerFlag {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 40px;
-}
-.playerInfo {
-  width: 165px;
-}
-.playerInfoContainer {
-  display: flex;
-}
 
-/*Reorders logo and title off phone*/
-@media screen and (min-width: 576px) {
-	.brandname {
-		order: 0;
-		width: 66.7%;
-	}
-	.logo {
-		order: 1;
-		width: 33.3%;
-	}
-}
 /*Adds margin on large screens*/
 @media screen and (min-width: 996px) {
 	body {

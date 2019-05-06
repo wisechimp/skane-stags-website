@@ -1,7 +1,7 @@
 import React from "react"
 import { Carousel } from "react-bootstrap"
 
-import styles from "./carousel.module.css"
+import styles from "./imagecarousel.module.css"
 
 export default (props) => (
   <Carousel fade="true">

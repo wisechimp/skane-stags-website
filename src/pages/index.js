@@ -1,6 +1,6 @@
 import React from "react"
 
-import Carousel from "../components/carousel"
+import ImageCarousel from "../components/imagecarousel"
 import Header from "../components/header"
 import Layout from "../components/layout"
 import Video from "../components/video"
@@ -16,7 +16,7 @@ export default () => (
       tagline="Skåne's representatives in the Swedish Rugby League's national championships."
       imgSrc={stagsLogo}
       imgAlt="The logo of Skane Stags Rugby League club"/>
-    <Carousel
+    <ImageCarousel
       firstSlide={stags2017}
       firstSlideAlt="Skane Stags Rugby League team after winning the 2017 Skane 9\'s tournament"
       firstSlideCaption="2017 Skane 9's winners!"

@@ -1,6 +1,7 @@
 p.carouselCaption {
   background-color: darkgray;
   color: white;
+  margin-bottom: 1em;
   padding: 0.5em;
   text-align: center;
 }
