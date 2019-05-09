@@ -1,0 +1,20 @@
+p.newsSnippet{
+  flex-grow: 1;
+}
+.imageReducedSize {
+  padding-left: 0.5em;
+  width: 150px;
+}
+.readMore {
+  padding: 0.5em 0;
+  text-align: right;
+}
+.snippet {
+  padding: 0 1em;
+}
+.snippetContent {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

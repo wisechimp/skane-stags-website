@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import get from "lodash/get"
 import { graphql } from "gatsby"
+import Parser from "html-react-parser"
 
 import Layout from "../components/layout"
 import NewsSnippet from "../components/newssnippet"
@@ -17,8 +18,9 @@ class News extends Component {
             return (
               <NewsSnippet
                 headline={node.title}
-                snippet={node.excerpt}
+                snippet={Parser(node.excerpt)}
                 slug={node.slug}
+                imgSrc={node.featured_media.localFile.childImageSharp.fluid}
               />
             )
           })}
@@ -46,6 +48,16 @@ export const newsQuery = graphql`
           excerpt
           date
           slug
+          featured_media {
+            id
+            localFile {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
       }
     }
