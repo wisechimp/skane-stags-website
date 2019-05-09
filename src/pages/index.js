@@ -1,7 +1,7 @@
 import React from "react"
 
 import ImageCarousel from "../components/imagecarousel"
-import Header from "../components/header"
+import HomeTitle from "../components/hometitle"
 import Layout from "../components/layout"
 import Video from "../components/video"
 import stagsLogo from "../images/skanestagslogo.png"
@@ -11,7 +11,7 @@ import stagsPolandAction from "../images/2018skanestagspolandaction.jpg"
 
 export default () => (
   <Layout>
-    <Header
+    <HomeTitle
       title="Skåne Stags Rugby League Club"
       tagline="Skåne's representatives in the Swedish Rugby League's national championships."
       imgSrc={stagsLogo}
