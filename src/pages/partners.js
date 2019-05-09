@@ -26,7 +26,7 @@ export default () => (
       alt="Stag Sports logo"
     />
     <div className="bodyContent">
-      <p>We are also thankful to <a href="http://www.stag-sports.com">Stag Sports</a> our kit suppliers. You can buy your own Skåne Stags kit by visiting our <Link to="/merchandise/">shop</Link>.</p>
+      <p>We are also thankful to <a href="https://www.stag-sports.com">Stag Sports</a> our kit suppliers. You can buy your own Skåne Stags kit by visiting our <Link to="/merchandise/">shop</Link>.</p>
     </div>
   </Layout>
 )
