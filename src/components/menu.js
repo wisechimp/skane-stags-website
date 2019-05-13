@@ -11,7 +11,7 @@ export default () => (
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/news/">News</Nav.Link>
         <NavDropdown title="Team" id="basic-nav-dropdown">
-          <NavDropdown.Item href="/fixtures/">Fixtures</NavDropdown.Item>
+          <NavDropdown.Item href="/calendar/">Calendar</NavDropdown.Item>
           <NavDropdown.Item href="/squad/">Squad</NavDropdown.Item>
           <NavDropdown.Item href="/training/">Training</NavDropdown.Item>
           <NavDropdown.Item href="/results/">Results</NavDropdown.Item>
