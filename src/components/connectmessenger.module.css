@@ -1,0 +1,20 @@
+a.messageButt {
+  background-color: #0078ff;
+  border-radius: 0.5em;
+  color: #ffffff;
+  padding: 0.5em;
+  text-decoration: none;
+}
+img.messyLogo {
+  margin: auto;
+  padding-bottom: 2em;
+  width: 150px;
+}
+.connectMessenger {
+  background-color: #f2f5f9;
+  border-radius: 0.5em;
+  margin: 1em;
+  padding: 1em 1em 1.5em 1em;
+  text-align: center;
+  width: fit-content;
+}
