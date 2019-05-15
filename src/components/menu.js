@@ -3,9 +3,10 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 
 import swedenFlag from "../images/sweden-flag-tn.png"
 
-export default () => (
+export default (props) => (
   <Navbar bg="dark" expand="sm" variant="dark">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Brand className="actionBar">{props.pageTitle}</Navbar.Brand>
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav>
         <Nav.Link href="/">Home</Nav.Link>
@@ -25,6 +26,7 @@ export default () => (
         <Nav.Link href="/merchandise/">Kit</Nav.Link>
       </Nav>
     </Navbar.Collapse>
+
     <Nav.Link href="/sv/">
       <img
         src={swedenFlag}

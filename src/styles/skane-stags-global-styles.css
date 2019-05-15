@@ -42,3 +42,17 @@ img.poster {
 		margin: auto;
 	}
 }
+/*Presenting the menu bar in a material designish kind of fashion */
+@media screen and (min-width: 576px) {
+	.actionBar {
+		display: none;
+	}
+}
+@media screen and (max-width: 575px) {
+	h1 {
+		display: none;
+	}
+  .brandname {
+    min-height: max-content;
+  }
+}

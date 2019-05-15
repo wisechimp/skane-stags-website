@@ -10,7 +10,9 @@ import stags2018 from "../images/2018skanestagspolandteam.jpg"
 import stagsPolandAction from "../images/2018skanestagspolandaction.jpg"
 
 export default () => (
-  <Layout>
+  <Layout
+    pageTitle="Skane Stags RLC"
+  >
     <HomeTitle
       title="Skåne Stags Rugby League Club"
       tagline="Skåne's representatives in the Swedish Rugby League's national championships."
