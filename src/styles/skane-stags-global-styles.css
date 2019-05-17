@@ -29,6 +29,21 @@ img.poster {
   margin-right: 6px;
   margin-bottom: 2.5em;
 }
+.contactBox {
+
+}
+.contactContainer {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1em 1fr;
+  margin: 1em;
+  justify-items: center;
+  width: 100%;
+}
+.contactOr {
+  display: inline-block;
+  text-align: center;
+}
 .playerCardsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -54,5 +69,17 @@ img.poster {
 	}
   .brandname {
     min-height: max-content;
+  }
+}
+/*Reordering the components on the contacts page */
+@media screen and (max-width: 775px) {
+  .contactContainer {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1em 1fr;
+    margin: 1em;
+    justify-items: center;
+    width: 100%;
   }
 }

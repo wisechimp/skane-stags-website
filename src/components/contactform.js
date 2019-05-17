@@ -1,6 +1,7 @@
 import React from "react"
 
 import styles from "./contactform.module.css"
+import Recaptcha from "./recaptcha"
 
 export default () => (
   <div className={styles.contactForm}>
@@ -55,17 +56,13 @@ export default () => (
               rows="5"
             />
           </p>
+          <Recaptcha />
           <div className={styles.formButton}>
             <input
               type="submit"
               value="Send message"
             />
           </div>
-
-
-        <p>We can be contacted by <a href="mailto:info@skanestags.com">email</a>
-        </p>
-
         </div>
       </fieldset>
     </form>

@@ -1,7 +1,8 @@
 .contactForm {
   background-color: #f2f5f9;
   border-radius: 0.5em;
-  margin: 1em;
+  display: inline-block;
+  max-width: 350px;
   padding: 1em;
   width: fit-content;
 }
