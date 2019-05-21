@@ -36,7 +36,8 @@
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "react-icons": "^3.7.0"
+    "react-icons": "^3.7.0",
+    "reaptcha": "^1.4.2"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
