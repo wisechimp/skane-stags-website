@@ -4,7 +4,9 @@ import Layout from "../components/layout"
 import Video from "../components/video"
 
 export default () => (
-  <Layout>
+  <Layout
+    pageTitle="Rugby League"
+  >
     <h1>What's Rugby League?</h1>
     <div className="bodyContent">
       <p>Check out the video below for a quick introduction to rugby league:</p>

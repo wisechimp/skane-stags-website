@@ -6,7 +6,9 @@ import SponsoredShirt from "../images/skanestagssponsorolearys.png"
 import ManufacturersLogo from "../images/stagsportslogo.png"
 
 export default () => (
-  <Layout>
+  <Layout
+    pageTitle="Partners"
+  >
     <h1>Partners</h1>
     <div className="bodyContent">
       <h3><i>o'Leary's in Lund</i></h3>

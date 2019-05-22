@@ -5,7 +5,9 @@ import Video from "../components/video"
 import TrainingPoster from "../images/2019stagstrainingen.png"
 
 export default () => (
-  <Layout>
+  <Layout
+    pageTitle="Training"
+  >
     <img className="poster"
       src={TrainingPoster}
       alt="Training poster for the Skane Stags"

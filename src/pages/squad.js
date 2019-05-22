@@ -11,7 +11,9 @@ class Squad extends Component {
     console.log(playerProfiles)
 
     return (
-      <Layout>
+      <Layout
+        pageTitle="Squad"
+      >
         <h1>Squad</h1>
         <div className="playerCardsContainer">
           {playerProfiles.map(({ node }) => {

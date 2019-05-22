@@ -3,7 +3,9 @@ import React from "react"
 import Layout from "../components/layout"
 
 export default () => (
-  <Layout>
+  <Layout
+    pageTitle="Calendar"
+  >
     <h1>Calendar</h1>
     <div className="calendarWrapper">
       <iframe

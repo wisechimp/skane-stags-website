@@ -58,7 +58,7 @@ module.exports = {
         short_name: "Skane Stags RL",
         start_url: "/",
         background_color: "#ff1500",
-        theme_color: "#ff1500",
+        theme_color: "#333333",
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",

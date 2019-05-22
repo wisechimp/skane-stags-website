@@ -5,7 +5,9 @@ import Layout from "../components/layout"
 import StagsLogo from "../images/skanestagslogo.png"
 
 export default () => (
-  <Layout>
+  <Layout
+    pageTitle="Whoops!"
+  >
     <h1>Whoops!</h1>
     <img className="poster"
       src={StagsLogo}

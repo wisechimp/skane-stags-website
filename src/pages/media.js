@@ -3,7 +3,9 @@ import React from "react"
 import Layout from "../components/layout"
 
 export default () => (
-  <Layout>
-    <h1>Media.</h1>
+  <Layout
+    pageTitle="Media"
+  >
+    <h1>Media</h1>
   </Layout>
 )

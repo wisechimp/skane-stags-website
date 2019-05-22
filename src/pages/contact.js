@@ -5,7 +5,9 @@ import ConnectMessenger from "../components/connectmessenger"
 import ContactForm from "../components/contactform"
 
 export default () => (
-  <Layout>
+  <Layout
+    pageTitle="Contact Us"
+  >
     <div className="contactContainer">
       <div className="contactBox">
         <ContactForm />

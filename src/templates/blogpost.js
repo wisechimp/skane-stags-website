@@ -5,7 +5,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
 const BlogPostTemplate = ({ data }) => (
-  <Layout>
+  <Layout
+    pageTitle={data.wordpressPost.title}
+  >
     <h1>{data.wordpressPost.title}</h1>
     <p>
       Written by {data.wordpressPost.author.name} on {data.wordpressPost.date}

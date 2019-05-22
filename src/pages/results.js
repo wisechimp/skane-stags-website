@@ -10,7 +10,9 @@ class Results extends Component {
     const resultsList = get (this, 'props.data.allResultsJson.edges')
 
     return (
-      <Layout>
+      <Layout
+        pageTitle="Results"
+      >
         <h1>Results</h1>
         <div>
           {resultsList.map(({ node }) => {

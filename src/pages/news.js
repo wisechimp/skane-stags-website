@@ -11,7 +11,9 @@ class News extends Component {
     const newsList = get (this, 'props.data.allWordpressPost.edges')
 
     return (
-      <Layout>
+      <Layout
+        pageTitle="News"
+      >
         <h1>News</h1>
         <div>
           {newsList.map(({ node }) => {
