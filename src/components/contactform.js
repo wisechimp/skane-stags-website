@@ -5,6 +5,18 @@ import Reaptcha from "reaptcha"
 
 import styles from "./contactform.module.css"
 
+function ConfirmationMessage(props) {
+  if (!props.confirmation) {
+    return null;
+  }
+
+  return (
+    <div>
+      <p className={styles.confirmationMessage}>Thank you for your message!</p>
+    </div>
+  )
+}
+
 class ContactForm extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +24,8 @@ class ContactForm extends Component {
       contactName: "",
       email: "",
       message: "",
-      buttonEnabled: false
+      buttonEnabled: false,
+      showConfirmationMessage: false
     };
   }
 
@@ -52,8 +65,16 @@ class ContactForm extends Component {
       const data = { email, message, contactName }
       console.log(data)
 
-      Axios.post('https://us-central1-skane-stags-website.cloudfunctions.net/submit', data).catch(error => {
-          console.log("What an error:" + error);
+      Axios
+        .post('https://us-central1-skane-stags-website.cloudfunctions.net/submit', data)
+        .then(
+          console.log("Wait a minute Mr Postman"),
+          this.setState({
+            showConfirmationMessage: true,
+            buttonEnabled: false
+          })
+        )
+        .catch(error => { console.log("What an error:" + error);
       });
   };
 
@@ -130,6 +151,7 @@ class ContactForm extends Component {
             </div>
           </fieldset>
         </form>
+        <ConfirmationMessage confirmation={this.state.showConfirmationMessage} />
       </div>
     )
   }

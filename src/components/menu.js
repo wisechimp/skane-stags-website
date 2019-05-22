@@ -31,9 +31,9 @@ export default (props) => (
     <Nav.Link href="https://www.facebook.com/skanestags/">
       <FaFacebookSquare />
     </Nav.Link>
-    // <Nav.Link href="https://www.facebook.com/skanestags/">
-    //   <FaFacebookSquare />
-    // </Nav.Link>
+    <Nav.Link href="https://www.instagram.com/skanestags">
+     <FaInstagram />
+    </Nav.Link>
     <Nav.Link href="https://twitter.com/skanecrusaders">
       <FaTwitter />
     </Nav.Link>

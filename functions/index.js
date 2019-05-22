@@ -1,9 +1,6 @@
 const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
 const cors = require('cors')({ origin: true })
-// Configure the email transport using the default SMTP transport and a GMail account.
-// For other types of transports such as Sendgrid see https://nodemailer.com/transports/
-// TODO: Configure the `gmail.email` and `gmail.password` Google Cloud environment variables.
 const gmailEmail = functions.config().gmail.email;
 const gmailPassword = functions.config().gmail.password;
 const mailTransport = nodemailer.createTransport({
@@ -15,20 +12,21 @@ const mailTransport = nodemailer.createTransport({
 });
 
 exports.submit = functions.https.onRequest((req, res) => {
+  console.log("Function Submitted");
+
     cors(req, res, () => {
-        if (req.method !== 'POST') {
-            return;
-        }
+      console.log(req.body);
 
-        const mailOptions = {
-            from: req.body.email,
-            replyTo: req.body.email,
-            to: gmailEmail,
-            subject: `${req.body.name} made a form submission`,
-            text: req.body.message,
-            html: `<p>${req.body.message}`
-        };
+      const mailOptions = {
+        from: req.body.email,
+        replyTo: req.body.email,
+        to: gmailEmail,
+        subject: `${req.body.contactName} made a form submission`,
+        text: req.body.message,
+        html: `<p>${req.body.message}`
+      };
 
-        mailTransport.sendMail(mailOptions);
-    });
+      mailTransport.sendMail(mailOptions);
+      return res.status(200).end();
+  });
 });

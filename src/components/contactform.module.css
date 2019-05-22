@@ -1,3 +1,8 @@
+p.confirmationMessage {
+  color: red;
+  padding-top: 1em;
+  text-align: center;
+}
 .contactForm {
   background-color: #f2f5f9;
   border-radius: 0.5em;
@@ -8,13 +13,14 @@
 }
 .formButton {
   float: right;
+  margin-top: 1em;
 }
 .formFields {
 
 }
 .formInput {
   padding-left: 0.5em;
-  width: 170px;
+  width: 200px;
 }
 .formLabel {
   display: inline-block;
