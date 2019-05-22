@@ -11,6 +11,13 @@ img.poster {
   padding-left: 1em;
   padding-right: 1em;
 }
+.calendarWrapper {
+  margin-top: 1em;
+}
+.calendarWrapper iframe {
+	width: 100%;
+  min-height: 400px;
+}
 .carousel-control-next {
   margin-bottom: 2.5em;
 }
@@ -30,13 +37,12 @@ img.poster {
   margin-bottom: 2.5em;
 }
 .contactBox {
-
+  margin: 1em;
 }
 .contactContainer {
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1em 1fr;
-  margin: 1em;
   justify-items: center;
   width: 100%;
 }
@@ -76,7 +82,7 @@ img.poster {
   .contactContainer {
     align-items: center;
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1em 1fr;
     margin: 1em;
     justify-items: center;
