@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import ImageCarousel from "../components/imagecarousel"
 import HomeTitle from "../components/hometitle"
@@ -37,10 +38,10 @@ export default () => (
   			Skåne Stags were established in 2013 and are the current national champions. We have a blend of nationalities with ex-pats from the likes of England, Australia, France and Tonga joining local Swedish talent.
   		</p>
   		<p>
-  			We can be found training at <a href="https://www.google.se/maps/place/Limhamnsf%C3%A4ltet/@55.5953031,12.9474745,323m/data=!3m1!1e3!4m5!3m4!1s0x4653a697bedc6367:0xc54fe103ad8766d!8m2!3d55.5953031!4d12.9489246?hl=en">Limhamnsfältet</a> in Malmö every Saturday from 10am during the season. Check our <a href="calender.php">calender</a> and <a href="https://www.facebook.com/skanestags">follow us on Facebook</a> for the latest schedule and news. All are welcome and talented players could make their way to the <a href="https://rugbyleague.se/">Swedish National Team Squad</a>.
+  			We can be found training at <a href="https://www.google.se/maps/place/Limhamnsf%C3%A4ltet/@55.5953031,12.9474745,323m/data=!3m1!1e3!4m5!3m4!1s0x4653a697bedc6367:0xc54fe103ad8766d!8m2!3d55.5953031!4d12.9489246?hl=en">Limhamnsfältet</a> in Malmö every Saturday from 10am during the season. Check our <Link to="/calendar">calendar</Link> and <a href="https://www.facebook.com/skanestags">follow us on Facebook</a> for the latest schedule and news. All are welcome and talented players could make their way to the <a href="https://www.facebook.com/swedenrugbyleague/">Swedish National Team Squad</a>.
   	  </p>
   		<p>
-  			Check out the highlights from our home 9's tournament in 2017 featuring <a href="https://www.facebook.com/KungsbackaRugbyClub/">Kungsbacka Broncos</a>, <a href="https://www.facebook.com/stockholm.rl/">Stockholm Kungar</a> and <a href="https://crlfc.dk/">Copenhagen</a>. Footage courtesy of our very own <a href="https://www.paulrhys.com/">Paul Rhys</a>.
+  			Check out the highlights from our home 9's tournament in 2017 featuring <a href="https://www.facebook.com/KungsbackaRugbyClub/">Kungsbacka Broncos</a>, <a href="https://www.facebook.com/stockholm.rl/">Stockholm Kungar</a> and <a href="https://www.facebook.com/CopenhagenRlfc/">Copenhagen</a>. Footage courtesy of our very own <a href="https://www.paulrhys.com/">Paul Rhys</a>.
   		</p>
     </div>
     <Video
