@@ -1,8 +1,7 @@
 import React from "react"
 import { Nav, Navbar, NavDropdown } from "react-bootstrap"
-import { FaFacebookSquare, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa"
 
-import swedenFlag from "../images/sweden-flag-tn.png"
+import SocialMediaLinks from "./socialmedialinks"
 
 export default (props) => (
   <Navbar bg="dark" expand="sm" variant="dark">
@@ -27,24 +26,6 @@ export default (props) => (
         <Nav.Link href="/merchandise/">Kit</Nav.Link>
       </Nav>
     </Navbar.Collapse>
-
-    <Nav.Link href="https://www.facebook.com/skanestags/">
-      <FaFacebookSquare />
-    </Nav.Link>
-    <Nav.Link href="https://www.instagram.com/skanestags">
-     <FaInstagram />
-    </Nav.Link>
-    <Nav.Link href="https://twitter.com/skanecrusaders">
-      <FaTwitter />
-    </Nav.Link>
-    <Nav.Link href="https://www.youtube.com/channel/UClPPKnRY10Yp0YxlCnULkkQ">
-      <FaYoutube />
-    </Nav.Link>
-    <Nav.Link href="/sv/">
-      <img
-        src={swedenFlag}
-        alt="Sweden Flag"
-      />
-    </Nav.Link>
+    <SocialMediaLinks />
   </Navbar>
 )

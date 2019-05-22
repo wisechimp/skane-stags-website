@@ -1,0 +1,12 @@
+img.flagIcon {
+  height: 20px;
+  width: 30px;
+}
+.socialGroup {
+  align: right;
+  padding: 0.5em;
+}
+.socialGroup a {
+  color: white;
+  padding-right: 1em;
+}
