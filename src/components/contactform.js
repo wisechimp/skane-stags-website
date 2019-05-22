@@ -46,6 +46,11 @@ class ContactForm extends Component {
     });
   }
 
+  allowValidation = event => {
+    console.log("Allow Validation")
+    document.getElementById('contactForm').removeAttribute('noValidate');
+  }
+
   handleSubmit = event => {
     event.preventDefault();
 
@@ -81,7 +86,11 @@ class ContactForm extends Component {
   render() {
     return (
       <div className={styles.contactForm}>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          id="contactForm"
+          onSubmit={this.handleSubmit}
+          noValidate
+        >
           <fieldset>
             <div className={styles.formFields}>
               <p className={styles.formRow}>
@@ -144,6 +153,7 @@ class ContactForm extends Component {
               />
               <button className={styles.formButton}
                 id="submitButton"
+                onClick={this.allowValidation}
                 disabled={!this.state.buttonEnabled}
               >
                 Send message
