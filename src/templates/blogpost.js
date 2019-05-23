@@ -1,18 +1,21 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import Img from "gatsby-image"
 
 import Layout from "../components/layout"
+import styles from "./blogpost.module.css"
 
 const BlogPostTemplate = ({ data }) => (
   <Layout
     pageTitle={data.wordpressPost.title}
   >
-    <h1>{data.wordpressPost.title}</h1>
-    <p>
-      Written by {data.wordpressPost.author.name} on {data.wordpressPost.date}
-    </p>
-    <p dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }} />
+    <div className={styles.blogpostStyle}>
+      <h1>{data.wordpressPost.title}</h1>
+      <p>
+        Written by {data.wordpressPost.author.name} on {data.wordpressPost.date}
+      </p>
+      <br />
+      <p dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }} />
+    </div>
   </Layout>
 )
 

@@ -39,7 +39,7 @@ export const newsQuery = graphql`
     allWordpressPost(
       sort:{
         fields:date
-        order:ASC
+        order:DESC
       }
     ) {
       edges {
