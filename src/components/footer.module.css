@@ -1,8 +1,8 @@
 .footer {
 	display: block;
-	text-align: center;
 	margin: auto;
   padding-top: 1em;
+	text-align: center;
 	width: 60%;
 }
 .footerLogo {
@@ -10,6 +10,6 @@
 	margin: 0 auto;
 	max-height: 150px;
 	max-width: 100%;
-  padding-top: 1em;
   padding-bottom: 1em;
+  padding-top: 1em;
 }

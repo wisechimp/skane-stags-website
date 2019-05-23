@@ -31,7 +31,7 @@ export default() => (
     >
       <FaYoutube />
     </a>
-    <Link href="/sv/">
+    <Link to="/sv/">
       <img className={styles.flagIcon}
         src={swedenFlag}
         alt="Sweden Flag"

@@ -23,7 +23,7 @@ exports.submit = functions.https.onRequest((req, res) => {
         to: gmailEmail,
         subject: `${req.body.contactName} made a form submission`,
         text: req.body.message,
-        html: `<p>${req.body.message}`
+        html: `<p>${req.body.message}</p>`
       };
 
       mailTransport.sendMail(mailOptions);
