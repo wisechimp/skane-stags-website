@@ -19,7 +19,7 @@ class News extends Component {
           {newsList.map(({ node }) => {
             return (
               <NewsSnippet
-                headline={node.title}
+                headline={Parser(node.title)}
                 snippet={Parser(node.excerpt)}
                 slug={node.slug}
                 imgSrc={node.featured_media.localFile.childImageSharp.fluid}
