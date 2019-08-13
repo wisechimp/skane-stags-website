@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import get from "lodash/get"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import KitCard from "../components/kitcard"
@@ -17,7 +17,7 @@ class Merchandise extends Component {
       >
         <h1>Buy Kit</h1>
         <div className="bodyContent">
-          <p>All Skåne Stags kit is available to order directly from the club. Email us with your request and we will contact you with payment details. All orders are processed by our supplier and take about 6 weeks plus postage to Sweden. All kit is made to order so unfortunately no refunds are possible. Please reference our <a href="https://stag-sports.com/rugby-kits/sizing-information">manufacturer's website</a> for sizing information.</p>
+          <p>All Skåne Stags kit is available to order directly from the club. <Link to="/contact/">Contact</Link> us with your request and we will get back you with payment details. To reduce kit costs we periodically place bulk orders with our supplier and would add your request to the next shipment. All kit is made to order so unfortunately no refunds are possible. Please reference our <a href="https://stag-sports.com/rugby-kits/sizing-information">manufacturer's website</a> for sizing information.</p>
           <div className="playerCardsContainer">
             {kitCatalogue.map(({ node }) => {
               return (
