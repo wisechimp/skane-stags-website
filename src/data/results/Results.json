@@ -1,6 +1,15 @@
 [
   {
     "id": "1",
+    "homeTeam":"Vrchlabí Mad Squirrels",
+    "homeScore": "16",
+    "awayTeam": "Skane Stags RL",
+    "awayScore": "21",
+    "date": "3rd August 2019",
+    "venue": "Stadion FC Vrchlabí"
+  },
+  {
+    "id": "2",
     "homeTeam":"Skane Stags RL",
     "homeScore": "62",
     "awayTeam": "Lugi Lions RFC",
@@ -9,7 +18,7 @@
     "venue": "Centrala Ip, Lund"
   },
   {
-    "id": "2",
+    "id": "3",
     "homeTeam": "Poland",
     "homeScore": "18",
     "awayTeam": "Skane Stags RL",

@@ -14,7 +14,7 @@ p {
 .matchDetails{
   font-size: 0.8em;
   font-style: italic;
-    text-align: center;
+  text-align: center;
 }
 .resultContainer {
   display: flex;
