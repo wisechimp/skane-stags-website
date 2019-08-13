@@ -29,5 +29,13 @@ export default (props) => (
       />
       <p className={styles.carouselCaption}>{props.thirdSlideCaption}</p>
     </Carousel.Item>
+    <Carousel.Item>
+      <img
+        className="d-block w-100"
+        src={props.fourthSlide}
+        alt={props.fourthSlideAlt}
+      />
+      <p className={styles.carouselCaption}>{props.fourthSlideCaption}</p>
+    </Carousel.Item>
   </Carousel>
 )
