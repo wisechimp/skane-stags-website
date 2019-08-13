@@ -12,7 +12,6 @@ export default () => (
       src={TrainingPoster}
       alt="Training poster for the Skane Stags"
     />
-    <br />
     <Video
       title="Limhansfältet, Skane Stags Rugby League Club's usual training location"
       width="800"
