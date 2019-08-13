@@ -6,6 +6,7 @@ img.poster {
   display: block;
   margin: auto;
   max-width: 100%;
+  padding-bottom: 1em;
 }
 .bodyContent {
   padding-left: 1em;
@@ -84,7 +85,6 @@ img.poster {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1em 1fr;
-    margin: 1em;
     justify-items: center;
     width: 100%;
   }

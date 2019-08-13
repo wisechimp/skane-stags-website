@@ -9,7 +9,7 @@ img.logo {
 	order: 1;
   padding-left: 1em;
   padding-right: 1em;
-  min-height: 150px;
+  /* min-height: 150px; */
   text-align: center;
 }
 .headerContainer {
