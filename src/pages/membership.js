@@ -4,11 +4,8 @@ import Layout from "../components/layout"
 import StagsSubsImg from "../images/2019stagssubs.png"
 
 export default () => (
-  <Layout
-    pageTitle="Join Us"
-  >
-    <h1>Join Us</h1>
-    <div className="bodyContent">
+  <Layout pageTitle="Join Us">
+    <div>
       <img className="poster"
         src={StagsSubsImg}
         alt="Poster calling for subs payments"
