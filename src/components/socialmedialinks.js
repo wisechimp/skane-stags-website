@@ -1,8 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 import { FaFacebookSquare, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa"
 
-import swedenFlag from "../images/sv-flag.png"
 import styles from "./socialmedialinks.module.css"
 
 export default() => (
@@ -31,11 +29,5 @@ export default() => (
     >
       <FaYoutube />
     </a>
-    <Link to="/sv/">
-      <img className={styles.flagIcon}
-        src={swedenFlag}
-        alt="Sweden Flag"
-      />
-    </Link>
   </div>
 )
