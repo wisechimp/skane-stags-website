@@ -16,7 +16,7 @@ img.poster {
   margin-top: 1em;
 }
 .calendarWrapper iframe {
-	width: 100%;
+  width: 100%;
   min-height: 400px;
 }
 .carousel-control-next {
@@ -26,7 +26,7 @@ img.poster {
   margin-bottom: 2.5em;
 }
 .carousel-indicators li {
-  background-color: rgba(201, 76, 76, 0.0);
+  background-color: rgba(201, 76, 76, 0);
   background-image: url(../images/balls.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -59,23 +59,29 @@ img.poster {
 
 /*Adds margin on large screens*/
 @media screen and (min-width: 996px) {
-	body {
-		max-width: 996px;
-		margin: auto;
-	}
+  body {
+    max-width: 996px;
+    margin: auto;
+  }
 }
 /*Presenting the menu bar in a material designish kind of fashion */
 @media screen and (min-width: 576px) {
-	.actionBar {
-		display: none;
-	}
+  .actionBar {
+    display: none;
+  }
 }
 @media screen and (max-width: 575px) {
-	h1 {
-		display: none;
-	}
+  h1 {
+    display: none;
+  }
   .brandname {
     min-height: max-content;
+  }
+  .navbar-brand {
+    margin-right: 0;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%);
   }
 }
 /*Reordering the components on the contacts page */
