@@ -3,7 +3,7 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 
 import SocialMediaLinks from "./socialmedialinks"
 
-export default (props) => (
+export default props => (
   <Navbar bg="dark" expand="sm" variant="dark">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Brand className="actionBar">{props.pageTitle}</Navbar.Brand>
@@ -13,8 +13,6 @@ export default (props) => (
         <Nav.Link href="/news/">News</Nav.Link>
         <Nav.Link href="/membership/">Join Us</Nav.Link>
         <NavDropdown title="Team" id="basic-nav-dropdown">
-          <NavDropdown.Item href="/calendar/">Calendar</NavDropdown.Item>
-          <NavDropdown.Item href="/squad/">Squad</NavDropdown.Item>
           <NavDropdown.Item href="/training/">Training</NavDropdown.Item>
           <NavDropdown.Item href="/results/">Results</NavDropdown.Item>
         </NavDropdown>
@@ -26,7 +24,7 @@ export default (props) => (
         </NavDropdown>
         <Nav.Link href="/merchandise/">Kit</Nav.Link>
       </Nav>
+      <SocialMediaLinks />
     </Navbar.Collapse>
-    <SocialMediaLinks />
   </Navbar>
 )
