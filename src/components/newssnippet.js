@@ -4,15 +4,14 @@ import Img from "gatsby-image"
 
 import styles from "./newssnippet.module.css"
 
-export default (props) => (
+export default props => (
   <div className={styles.snippet}>
     <h3>{props.headline}</h3>
+    <p className={styles.newsDate}>{props.date}</p>
     <div className={styles.snippetContent}>
       <p className={styles.newsSnippet}>{props.snippet}</p>
       <div className={styles.imageReducedSize}>
-        <Img
-          fluid={props.imgSrc}
-        />
+        <Img fluid={props.imgSrc} />
       </div>
     </div>
     <div className={styles.readMore}>

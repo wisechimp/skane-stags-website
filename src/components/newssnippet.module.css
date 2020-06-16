@@ -1,4 +1,7 @@
-p.newsSnippet{
+p.newsDate {
+  font-style: italic;
+}
+p.newsSnippet {
   flex-grow: 1;
 }
 .imageReducedSize {

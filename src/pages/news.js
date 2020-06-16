@@ -8,12 +8,10 @@ import NewsSnippet from "../components/newssnippet"
 
 class News extends Component {
   render() {
-    const newsList = get (this, 'props.data.allWordpressPost.edges')
+    const newsList = get(this, "props.data.allWordpressPost.edges")
 
     return (
-      <Layout
-        pageTitle="News"
-      >
+      <Layout pageTitle="News">
         <h1>News</h1>
         <div>
           {newsList.map(({ node }) => {
@@ -21,6 +19,7 @@ class News extends Component {
               <NewsSnippet
                 headline={Parser(node.title)}
                 snippet={Parser(node.excerpt)}
+                date={node.date}
                 slug={node.slug}
                 imgSrc={node.featured_media.localFile.childImageSharp.fluid}
               />
@@ -36,19 +35,14 @@ export default News
 
 export const newsQuery = graphql`
   query {
-    allWordpressPost(
-      sort:{
-        fields:date
-        order:DESC
-      }
-    ) {
+    allWordpressPost(sort: { fields: date, order: DESC }) {
       edges {
         node {
           id
           title
           content
           excerpt
-          date
+          date(formatString: "MMMM DD, YYYY")
           slug
           featured_media {
             id
