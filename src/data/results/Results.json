@@ -1,29 +1,56 @@
 [
-  {
-    "id": "1",
-    "homeTeam":"Vrchlabí Mad Squirrels",
-    "homeScore": "16",
-    "awayTeam": "Skane Stags RL",
-    "awayScore": "21",
-    "date": "3rd August 2019",
-    "venue": "Stadion FC Vrchlabí"
-  },
-  {
-    "id": "2",
-    "homeTeam":"Skane Stags RL",
-    "homeScore": "62",
-    "awayTeam": "Lugi Lions RFC",
-    "awayScore": "14",
-    "date": "13th April 2019",
-    "venue": "Centrala Ip, Lund"
-  },
-  {
-    "id": "3",
-    "homeTeam": "Poland",
-    "homeScore": "18",
-    "awayTeam": "Skane Stags RL",
-    "awayScore": "56",
-    "date": "21st July 2018",
-    "venue": "Stadion KS Budowlani, Łódź"
-  }
+	{
+		"id": "1",
+		"homeTeam": "Vrchlabí Mad Squirrels",
+		"homeScore": "16",
+		"awayTeam": "Skane Stags RL",
+		"awayScore": "21",
+		"date": "3rd August 2019",
+		"venue": "Stadion FC Vrchlabí"
+	},
+	{
+		"id": "2",
+		"homeTeam": "Skane Stags RL",
+		"homeScore": "62",
+		"awayTeam": "Lugi Lions RFC",
+		"awayScore": "14",
+		"date": "13th April 2019",
+		"venue": "Centrala Ip, Lund"
+	},
+	{
+		"id": "3",
+		"homeTeam": "Poland",
+		"homeScore": "18",
+		"awayTeam": "Skane Stags RL",
+		"awayScore": "56",
+		"date": "21st July 2018",
+		"venue": "Stadion KS Budowlani, Łódź"
+	},
+	{
+		"id": "4",
+		"homeTeam": "Skane Stags RL",
+		"homeScore": "10",
+		"awayTeam": "Stockholm Kungar",
+		"awayScore": "4",
+		"date": "3rd June 2017",
+		"venue": "Centrala Ip, Lund - Skane 9's"
+	},
+	{
+		"id": "5",
+		"homeTeam": "Skane Stags RL",
+		"homeScore": "12",
+		"awayTeam": "Kungsbacka Broncos",
+		"awayScore": "8",
+		"date": "3rd June 2017",
+		"venue": "Centrala Ip, Lund - Skane 9's"
+	},
+	{
+		"id": "6",
+		"homeTeam": "Skane Stags RL",
+		"homeScore": "10",
+		"awayTeam": "Copenhagen Black Swan RL",
+		"awayScore": "6",
+		"date": "3rd June 2017",
+		"venue": "Centrala Ip, Lund - Skane 9's"
+	}
 ]
