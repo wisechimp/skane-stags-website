@@ -1,0 +1,18 @@
+.kitCard {
+  background-color: lightyellow;
+  border-color: black;
+  border-radius: .5rem;
+  border-width: .25rem;
+  box-shadow:4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )
+}
+
+.kitImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.kitText {
+  padding: 0.5em;
+}

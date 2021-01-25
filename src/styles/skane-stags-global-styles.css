@@ -60,6 +60,7 @@ img.poster {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	grid-gap: 1em;
+	padding-top: 1em;
 }
 
 /*Adds margin on large screens*/

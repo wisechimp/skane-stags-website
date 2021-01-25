@@ -1,17 +1,18 @@
 import React from "react"
 import Img from "gatsby-image"
 
-export default (props) => (
-  <div>
-    <Img
-      fluid={props.kitImgSrc}
-      alt={props.kitImgAlt}
-      width="300"
-    />
-    <div>
+import { kitCard, kitImage, kitText } from "./kitcard.module.css"
+
+export default ({ kitImgAlt, kitImgSrc, kitItemDescription, kitItemName }) => (
+  <div className={kitCard}>
+    <div className={kitImage}>
+      <Img fluid={kitImgSrc} alt={kitImgAlt} />
+    </div>
+    <div className={kitText}>
       <p className="playerCardText">
-        <b>{props.kitItemName}</b><br />
-        {props.kitItemDescription}
+        <b>{kitItemName}</b>
+        <br />
+        {kitItemDescription}
       </p>
     </div>
   </div>
