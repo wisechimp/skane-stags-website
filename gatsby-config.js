@@ -9,8 +9,10 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -35,7 +37,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `squad`,
-        path: `${__dirname}/src/data/squadlist`,
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -46,6 +56,7 @@ module.exports = {
         protocol: `https`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: true,
+        minimizeDeprecationNotice: true,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: false,
         perPage: 10,
