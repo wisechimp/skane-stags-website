@@ -57,7 +57,7 @@ export const playerQuery = graphql`
             title
             imageSrc {
               childImageSharp {
-                fluid {
+                fluid(quality: 90) {
                   ...GatsbyImageSharpFluid
                 }
               }
