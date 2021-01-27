@@ -14,6 +14,7 @@ export default props => (
         <Nav.Link href="/membership/">Join Us</Nav.Link>
         <NavDropdown title="Team" id="basic-nav-dropdown">
           <NavDropdown.Item href="/training/">Training</NavDropdown.Item>
+          <NavDropdown.Item href="/squad/">Squad</NavDropdown.Item>
           <NavDropdown.Item href="/results/">Results</NavDropdown.Item>
         </NavDropdown>
         <NavDropdown title="About" id="basic-nav-dropdown">

@@ -1,29 +1,35 @@
 import React from "react"
 import Img from "gatsby-image"
 
-import styles from "./playercard.module.css"
+import {
+  playerCard,
+  playerCardText,
+  playerFlagPosition,
+  playerNameText,
+  playerPhoto,
+} from "./playercard.module.css"
 
-export default (props) => (
-  <div className={styles.playerCard}>
-    <Img
-      fluid={props.imgSrc}
-      alt={props.imgAlt}
-      width="200"
-      height="200"
-    />
-    <div className={styles.playerInfoContainer}>
-      <div className={styles.playerInfo}>
-        <p className={styles.playerCardText}>
-          <b>Name: {props.playerName}</b><br />
-          Position: {props.playerPositiion}
-        </p>
+export default ({
+  playerName,
+  playerPosition,
+  playersNat,
+  playersFlag,
+  imgSrc,
+  sponsor,
+}) => (
+  <div className={playerCard}>
+    <div className={playerPhoto}>
+      <Img fluid={imgSrc} alt={playerName} />
+      <div className={playerFlagPosition}>
+        <Img fixed={playersFlag} alt={playersNat} />
       </div>
-      <div className={styles.playerFlag}>
-        <Img
-          fixed={props.playersNat}
-          alt={props.playersFlag}
-        />
+      <div className={playerNameText}>
+        <p>{playerName}</p>
       </div>
+    </div>
+    <div className={playerCardText}>
+      <p>Position: {playerPosition}</p>
+      <p>Sponsored by: {sponsor}</p>
     </div>
   </div>
 )

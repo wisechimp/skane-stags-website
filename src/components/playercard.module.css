@@ -1,19 +1,43 @@
-p.playerCardText {
-  margin-bottom: 0px;
-}
 .playerCard {
+  background-color: red;
+  border-radius: 0.5em;
+  box-shadow:4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
   margin: auto;
-  max-width: 200px;
+  max-width: 250px;
+  padding: 0.5em;
 }
-.playerFlag {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 40px;
+
+.playerCardText p {
+  color: white;
 }
-.playerInfo {
-  width: 165px;
+
+.playerFlagPosition {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
-.playerInfoContainer {
-  display: flex;
+
+.playerFlagPosition img {
+  border: 1px solid black;
+}
+
+.playerNameText {
+  background-color: yellow;
+  border-radius: 0.5em;
+  bottom: 8px;
+  box-sizing: border-box;
+  left: 8px;
+  padding: 4px;
+  position: absolute;
+  width: calc(100% - 16px);
+}
+
+.playerNameText p {
+  font-weight: bold;
+  text-align: center;
+}
+
+.playerPhoto {
+  position: relative;
+  width: 225px;
 }

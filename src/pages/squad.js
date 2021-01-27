@@ -7,25 +7,32 @@ import PlayerCard from "../components/playercard"
 
 class Squad extends Component {
   render() {
-    const playerProfiles = get(this, 'props.data.allSquadListJson.edges')
+    const playerProfiles = get(this, "props.data.allMdx.edges")
     console.log(playerProfiles)
 
     return (
-      <Layout
-        pageTitle="Squad"
-      >
+      <Layout pageTitle="Squad">
         <h1>Squad</h1>
         <div className="playerCardsContainer">
           {playerProfiles.map(({ node }) => {
+            const {
+              flagSrc,
+              imageSrc,
+              nationality,
+              number,
+              position,
+              sponsor,
+              title,
+            } = node.frontmatter
             return (
               <PlayerCard
-                key={node.id}
-                imgSrc={node.imageSrc.childImageSharp.fluid}
-                imgAlt={node.imageAlt}
-                playerName={node.name}
-                playerPositiion={node.position}
-                playersNat={node.flagSrc.childImageSharp.fixed}
-                playersFlag={node.flagAlt}
+                key={number}
+                imgSrc={imageSrc.childImageSharp.fluid}
+                playerName={title}
+                playerPosition={position}
+                playersFlag={flagSrc.childImageSharp.fixed}
+                playersNat={nationality}
+                sponsor={sponsor}
               />
             )
           })}
@@ -39,28 +46,30 @@ export default Squad
 
 export const playerQuery = graphql`
   query {
-    allSquadListJson {
+    allMdx(sort: { fields: frontmatter___number }) {
       edges {
         node {
-          id
-          name
-          position
-          imageSrc {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
+          frontmatter {
+            number
+            nationality
+            position
+            flagSrc {
+              childImageSharp {
+                fixed(width: 30, height: 20) {
+                  ...GatsbyImageSharpFixed
+                }
               }
             }
-          }
-          imageAlt
-          flagSrc {
-            childImageSharp {
-              fixed(width: 30, height: 20) {
-                ...GatsbyImageSharpFixed
+            title
+            imageSrc {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            sponsor
           }
-          flagAlt
         }
       }
     }
