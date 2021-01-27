@@ -16,7 +16,7 @@ class Squad extends Component {
         <div className="playerCardsContainer">
           {playerProfiles.map(({ node }) => {
             const {
-              flagSrc,
+              flag,
               imageSrc,
               nationality,
               number,
@@ -30,7 +30,7 @@ class Squad extends Component {
                 imgSrc={imageSrc.childImageSharp.fluid}
                 playerName={title}
                 playerPosition={position}
-                playersFlag={flagSrc.childImageSharp.fixed}
+                playersFlag={flag}
                 playersNat={nationality}
                 sponsor={sponsor}
               />
@@ -53,13 +53,7 @@ export const playerQuery = graphql`
             number
             nationality
             position
-            flagSrc {
-              childImageSharp {
-                fixed(width: 30, height: 20) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
+            flag
             title
             imageSrc {
               childImageSharp {

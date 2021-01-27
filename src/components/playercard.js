@@ -1,5 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
+import ReactCountryFlag from "react-country-flag"
 
 import {
   playerCard,
@@ -21,7 +22,14 @@ export default ({
     <div className={playerPhoto}>
       <Img fluid={imgSrc} alt={playerName} />
       <div className={playerFlagPosition}>
-        <Img fixed={playersFlag} alt={playersNat} />
+        <ReactCountryFlag
+          countryCode={playersFlag}
+          svg
+          style={{
+            width: "2em",
+            height: "2em",
+          }}
+        />
       </div>
       <div className={playerNameText}>
         <p>{playerName}</p>
