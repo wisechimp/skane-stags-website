@@ -7,7 +7,7 @@ import styles from "./contactform.module.css"
 
 function ConfirmationMessage(props) {
   if (!props.confirmation) {
-    return null;
+    return null
   }
 
   return (
@@ -19,14 +19,14 @@ function ConfirmationMessage(props) {
 
 class ContactForm extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       contactName: "",
       email: "",
       message: "",
       buttonEnabled: false,
-      showConfirmationMessage: false
-    };
+      showConfirmationMessage: false,
+    }
   }
 
   handleInputChange = event => {
@@ -42,62 +42,58 @@ class ContactForm extends Component {
 
   onVerify = () => {
     this.setState({
-      buttonEnabled: true
-    });
+      buttonEnabled: true,
+    })
   }
 
   allowValidation = event => {
     console.log("Allow Validation")
-    document.getElementById('contactForm').removeAttribute('noValidate');
+    document.getElementById("contactForm").removeAttribute("noValidate")
   }
 
   handleSubmit = event => {
-    event.preventDefault();
+    event.preventDefault()
 
     const config = {
-        apiKey: `${process.env.FIREBASE_API_KEY}`, // Pull from .env
-        databaseURL: 'https://skane-stags-website.firebaseio.com'
-    };
+      apiKey: `${process.env.FIREBASE_API_KEY}`, // Pull from .env
+      databaseURL: "https://skane-stags-website.firebaseio.com",
+    }
 
     if (!firebase) {
       //const firebase = require('firebase/app');
-      firebase.initializeApp(config);
+      firebase.initializeApp(config)
+    }
+
+    const email = this.state.email
+    const message = this.state.message
+    const contactName = this.state.contactName
+    const data = { email, message, contactName }
+    console.log(data)
+
+    Axios.post(
+      "https://us-central1-skane-stags-website.cloudfunctions.net/submit",
+      data
+    )
+      .then(
+        console.log("Wait a minute Mr Postman"),
+        this.setState({
+          showConfirmationMessage: true,
+          buttonEnabled: false,
+        })
+      )
+      .catch(error => {
+        console.log("What an error:" + error)
+      })
   }
-
-      const email = this.state.email
-      const message = this.state.message
-      const contactName = this.state.contactName
-      const data = { email, message, contactName }
-      console.log(data)
-
-      Axios
-        .post('https://us-central1-skane-stags-website.cloudfunctions.net/submit', data)
-        .then(
-          console.log("Wait a minute Mr Postman"),
-          this.setState({
-            showConfirmationMessage: true,
-            buttonEnabled: false
-          })
-        )
-        .catch(error => { console.log("What an error:" + error);
-      });
-  };
 
   render() {
     return (
       <div className={styles.contactForm}>
-        <form
-          id="contactForm"
-          onSubmit={this.handleSubmit}
-          noValidate
-        >
+        <form id="contactForm" onSubmit={this.handleSubmit} noValidate>
           <fieldset>
             <div className={styles.formFields}>
               <p className={styles.formRow}>
-                <label
-                  className={styles.formLabel}
-                  htmlFor="contactName"
-                >
+                <label className={styles.formLabel} htmlFor="contactName">
                   Name:
                 </label>
                 <input
@@ -112,10 +108,7 @@ class ContactForm extends Component {
                 />
               </p>
               <p className={styles.formRow}>
-                <label
-                  className={styles.formLabel}
-                  htmlFor="email"
-                >
+                <label className={styles.formLabel} htmlFor="email">
                   Email:
                 </label>
                 <input
@@ -130,10 +123,7 @@ class ContactForm extends Component {
                 />
               </p>
               <p className={styles.formRow}>
-                <label
-                  className={styles.formLabel}
-                  htmlFor="message"
-                >
+                <label className={styles.formLabel} htmlFor="message">
                   Message:
                 </label>
                 <textarea
@@ -148,10 +138,11 @@ class ContactForm extends Component {
                 />
               </p>
               <Reaptcha
-                sitekey={`${process.env.RECAPTCHA_SITE_KEY}`}
+                sitekey={`${process.env.SITE_RECAPTCHA_KEY}`}
                 onVerify={this.onVerify}
               />
-              <button className={styles.formButton}
+              <button
+                className={styles.formButton}
                 id="submitButton"
                 onClick={this.allowValidation}
                 disabled={!this.state.buttonEnabled}
@@ -161,7 +152,9 @@ class ContactForm extends Component {
             </div>
           </fieldset>
         </form>
-        <ConfirmationMessage confirmation={this.state.showConfirmationMessage} />
+        <ConfirmationMessage
+          confirmation={this.state.showConfirmationMessage}
+        />
       </div>
     )
   }
