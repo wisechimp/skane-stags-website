@@ -12,6 +12,10 @@ img.poster {
 	padding-left: 1em;
 	padding-right: 1em;
 }
+.bodyContent h3 {
+	margin: 0;
+	padding: 0.5em 0;
+}
 .calendarWrapper {
 	margin-top: 1em;
 }
