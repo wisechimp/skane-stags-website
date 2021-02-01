@@ -41,7 +41,17 @@ exports.createSchemaCustomization = ({ actions }) => {
       id: String!
       name: String!
       description: String!
+      imageSrc: File @fileByRelativePath
       imageAlt: String!
+    },
+    type ResultsJson implements Node {
+      id: String!
+      homeTeam: String!
+      homeScore: String!
+      awayTeam: String!
+      awayScore: String!
+      date: String!
+      venue: String!
     }
   `
   createTypes(typeDefs)
