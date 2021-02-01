@@ -33,3 +33,16 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 }
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type KitJson implements Node {
+      id: String!
+      name: String!
+      description: String!
+      imageAlt: String!
+    }
+  `
+  createTypes(typeDefs)
+}
