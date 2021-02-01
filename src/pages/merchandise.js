@@ -7,7 +7,7 @@ import KitCard from "../components/kitcard"
 
 class Merchandise extends Component {
   render() {
-    const kitCatalogue = get(this, "props.data.allKitListJson.edges")
+    const kitCatalogue = get(this, "props.data.allKitJson.edges")
     console.log("something")
     console.log(kitCatalogue)
 
@@ -50,7 +50,7 @@ export default Merchandise
 
 export const kitQuery = graphql`
   query {
-    allKitListJson {
+    allKitJson {
       edges {
         node {
           id
