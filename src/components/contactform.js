@@ -56,6 +56,7 @@ export default () => {
         action="/thanks/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
         <noscript>
