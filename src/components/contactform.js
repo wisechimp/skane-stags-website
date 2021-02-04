@@ -1,163 +1,126 @@
-import React, { Component } from "react"
-import Axios from "axios"
-import firebase from "@firebase/app"
-import Reaptcha from "reaptcha"
+import React, { useState, createRef } from "react"
+import { navigate } from "gatsby"
+import Recaptcha from "react-google-recaptcha"
 
-import styles from "./contactform.module.css"
+import contactformStyles from "./contactform.module.css"
 
-function ConfirmationMessage(props) {
-  if (!props.confirmation) {
-    return null
+const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY
+if (typeof RECAPTCHA_KEY === "undefined") {
+  throw new Error(`
+    Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
+    You probably forget to set it in your Netlify build environment variables. 
+    Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
+    Note this demo is specifically for Recaptcha v2
+    `)
+}
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
+export default () => {
+  const [state, setState] = useState({})
+  const recaptchaRef = createRef()
+
+  const handleChange = e => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    const recaptchaValue = recaptchaRef.current.getValue()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        "g-recaptcha-response": recaptchaValue,
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error))
   }
 
   return (
-    <div>
-      <p className={styles.confirmationMessage}>Thank you for your message!</p>
+    <div className={contactformStyles.contactForm}>
+      <form
+        name="contact"
+        method="post"
+        action="/thanks/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        <noscript>
+          <p>This form won’t work with Javascript disabled</p>
+        </noscript>
+        <fieldset>
+          <div className={contactformStyles.formFields}>
+            <p class="hidden">
+              <label>
+                Don’t fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
+            <input type="hidden" name="form-name" value="contact" />
+            <p className={contactformStyles.formRow}>
+              <label
+                className={contactformStyles.formLabel}
+                htmlFor="contactName"
+              >
+                Name:
+              </label>
+              <input
+                className={contactformStyles.formInput}
+                type="text"
+                id="contactName"
+                name="contactName"
+                placeholder="Your name"
+                required="required"
+                onChange={handleChange}
+              />
+            </p>
+            <p className={contactformStyles.formRow}>
+              <label className={contactformStyles.formLabel} htmlFor="email">
+                Email:
+              </label>
+              <input
+                className={contactformStyles.formInput}
+                type="text"
+                id="email"
+                name="email"
+                placeholder="username@email.com"
+                required="required"
+                onChange={handleChange}
+              />
+            </p>
+            <p className={contactformStyles.formRow}>
+              <label className={contactformStyles.formLabel} htmlFor="message">
+                Message:
+              </label>
+              <textarea
+                className={contactformStyles.formInput}
+                id="message"
+                name="message"
+                placeholder="Your message"
+                required="required"
+                rows="5"
+                onChange={handleChange}
+              />
+            </p>
+            <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+            <button className={contactformStyles.formButton} type="submit">
+              Send Message
+            </button>
+          </div>
+        </fieldset>
+      </form>
     </div>
   )
 }
-
-class ContactForm extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      contactName: "",
-      email: "",
-      message: "",
-      buttonEnabled: false,
-      showConfirmationMessage: false,
-    }
-  }
-
-  handleInputChange = event => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
-
-    this.setState({
-      [name]: value,
-    })
-    console.log(this.state)
-  }
-
-  onVerify = () => {
-    this.setState({
-      buttonEnabled: true,
-    })
-  }
-
-  allowValidation = event => {
-    console.log("Allow Validation")
-    document.getElementById("contactForm").removeAttribute("noValidate")
-  }
-
-  handleSubmit = event => {
-    event.preventDefault()
-
-    const config = {
-      apiKey: `${process.env.FIREBASE_API_KEY}`, // Pull from .env
-      databaseURL: "https://skane-stags-website.firebaseio.com",
-    }
-
-    if (!firebase) {
-      //const firebase = require('firebase/app');
-      firebase.initializeApp(config)
-    }
-
-    const email = this.state.email
-    const message = this.state.message
-    const contactName = this.state.contactName
-    const data = { email, message, contactName }
-    console.log(data)
-
-    Axios.post(
-      "https://us-central1-skane-stags-website.cloudfunctions.net/submit",
-      data
-    )
-      .then(
-        console.log("Wait a minute Mr Postman"),
-        this.setState({
-          showConfirmationMessage: true,
-          buttonEnabled: false,
-        })
-      )
-      .catch(error => {
-        console.log("What an error:" + error)
-      })
-  }
-
-  render() {
-    return (
-      <div className={styles.contactForm}>
-        <form id="contactForm" onSubmit={this.handleSubmit} noValidate>
-          <fieldset>
-            <div className={styles.formFields}>
-              <p className={styles.formRow}>
-                <label className={styles.formLabel} htmlFor="contactName">
-                  Name:
-                </label>
-                <input
-                  className={styles.formInput}
-                  type="text"
-                  id="contactName"
-                  name="contactName"
-                  placeholder="Your name"
-                  required="required"
-                  value={this.state.contactName}
-                  onChange={this.handleInputChange}
-                />
-              </p>
-              <p className={styles.formRow}>
-                <label className={styles.formLabel} htmlFor="email">
-                  Email:
-                </label>
-                <input
-                  className={styles.formInput}
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="yourname@email.com"
-                  required="required"
-                  value={this.state.email}
-                  onChange={this.handleInputChange}
-                />
-              </p>
-              <p className={styles.formRow}>
-                <label className={styles.formLabel} htmlFor="message">
-                  Message:
-                </label>
-                <textarea
-                  className={styles.formInput}
-                  id="message"
-                  name="message"
-                  placeholder="Your message"
-                  required="required"
-                  rows="5"
-                  value={this.state.message}
-                  onChange={this.handleInputChange}
-                />
-              </p>
-              <Reaptcha
-                sitekey={`${process.env.SITE_RECAPTCHA_KEY}`}
-                onVerify={this.onVerify}
-              />
-              <button
-                className={styles.formButton}
-                id="submitButton"
-                onClick={this.allowValidation}
-                disabled={!this.state.buttonEnabled}
-              >
-                Send message
-              </button>
-            </div>
-          </fieldset>
-        </form>
-        <ConfirmationMessage
-          confirmation={this.state.showConfirmationMessage}
-        />
-      </div>
-    )
-  }
-}
-
-export default ContactForm
