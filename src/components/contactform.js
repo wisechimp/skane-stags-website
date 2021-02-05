@@ -1,10 +1,9 @@
 import React, { useState, createRef } from "react"
 import { navigate } from "gatsby"
-import Recaptcha from "react-google-recaptcha"
 
 import contactformStyles from "./contactform.module.css"
 
-const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY
+/* const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY
 if (typeof RECAPTCHA_KEY === "undefined") {
   throw new Error(`
     Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
@@ -12,7 +11,7 @@ if (typeof RECAPTCHA_KEY === "undefined") {
     Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
     Note this demo is specifically for Recaptcha v2
     `)
-}
+} */
 
 function encode(data) {
   return Object.keys(data)
@@ -115,7 +114,7 @@ export default () => {
                 onChange={handleChange}
               />
             </p>
-            <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+            <div data-netlify-recaptcha="true"></div>
             <button className={contactformStyles.formButton} type="submit">
               Send Message
             </button>
