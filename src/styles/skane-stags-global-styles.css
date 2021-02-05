@@ -56,6 +56,10 @@ img.poster {
 	text-align: center;
 }
 
+.hidden {
+		display: none;
+}
+
 .navbar-collapse {
 	justify-content: space-between;
 }
