@@ -1,7 +1,6 @@
 .videoWrapper {
   margin-top: 1em;
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
 	overflow: hidden;
 }
 .videoWrapper iframe {

@@ -1,16 +1,14 @@
 import React from "react"
+import { LiteYoutubeEmbed } from "react-lite-yt-embed"
 
-import styles from "./video.module.css"
+import { videoWrapper } from "./video.module.css"
 
-export default (props) => (
-  <div className={styles.videoWrapper}>
-    <iframe
-      title={props.title}
-      width={props.width}
-      height={props.height}
-      src={props.src}
-      frameBorder="0"
-      allowFullScreen
-    />
-  </div>
-)
+const Video = ({ videoId }) => {
+  return (
+    <div className={videoWrapper}>
+      <LiteYoutubeEmbed id={videoId} lazyImage mute={false} />
+    </div>
+  )
+}
+
+export default Video

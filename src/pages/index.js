@@ -91,12 +91,7 @@ export default () => (
           <a href="https://www.paulrhys.com/">Paul Rhys</a>.
         </p>
       </div>
-      <Video
-        title="2017 Lund Nines Highlights"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/AnQPQslLzkA?rel=0"
-      />
+      <Video videoId="AnQPQslLzkA" />
     </Layout>
   </div>
 )
