@@ -1,18 +1,17 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Video from "../components/video"
+import Map from "../components/map"
 import TrainingPoster from "../images/2019stagstrainingen.png"
 
 export default () => (
-  <Layout
-    pageTitle="Training"
-  >
-    <img className="poster"
+  <Layout pageTitle="Training">
+    <img
+      className="poster"
       src={TrainingPoster}
       alt="Training poster for the Skane Stags"
     />
-    <Video
+    <Map
       title="Limhansfältet, Skane Stags Rugby League Club's usual training location"
       width="800"
       height="600"
