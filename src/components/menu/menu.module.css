@@ -1,0 +1,144 @@
+.actionBar{
+  align-content: space-between;
+  background-color: var(--primary-dark);
+  display: flex;
+  height: 60px;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+}
+
+.dropdownContent {
+  border: 1.5px solid var(--primary-contrast);
+  border-radius: 0.25em;
+  display: none;
+  position: absolute;
+}
+
+.droppingDown {
+  background-color: var(--primary-dark);
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  z-index: 5;
+}
+
+.droppingDown a {
+  color: var(--primary-dark);
+  margin: 1em;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  width: 50%;
+}
+
+.navLinks button {
+  background: var(--primary-dark);
+  border: none;
+  color: var(--primary-light);
+  padding: unset
+}
+
+.navLinks button:focus {
+  outline: none;
+}
+
+.navLinks li a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.navUnit {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pageTitle {
+  color: var(--primary-light);
+  font-size: 20px;
+  margin: 0px;
+  text-align: center;
+  z-index: 25;
+}
+
+.pageTitlePosition {
+  display: none;
+  flex-direction: column;
+  height: inherit;
+  justify-content: center;
+  position: absolute;
+  width: 40%
+}
+
+ul {
+  margin-bottom: unset;
+}
+
+/*
+    Moving the "Action Bar" to the bottom when being used on a mobile for ease
+    of use for mobile customers
+*/
+
+@media screen and (max-width: 768px) {
+  .actionBar {
+    bottom: 0px;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 20;
+  }
+
+  .droppingDown {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+  .navLinks {
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    padding-left: 0;
+    width: 100%
+  }
+
+  .navUnit {
+    background: var(--primary-dark);
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    clip-path: circle(100px at 50% 120%);
+    -webkit-clip-path: circle(100px at 50% 120%);
+    transition: all 1s ease-out;
+  }
+
+  .navUnit.open {
+    clip-path: circle(2000px at 50% 120%);
+    -webkit-clip-path: circle(2000px at 50% 120%);
+  }
+
+  .pageTitlePosition {
+    display: flex;
+  }
+
+  .socialButts {
+    height: 20vh;
+    position: relative;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .droppingDown {
+    max-width: 130px;
+  }
+}

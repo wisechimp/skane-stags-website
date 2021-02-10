@@ -1,0 +1,45 @@
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .hamburger {
+        background-color: var(--primary-dark);
+        border: 2px solid yellow;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+        width: 54px;
+        z-index: 25;
+    }
+
+    .hamburgerBunTop, .hamburgerMeat, .hamburgerBunBottom {
+        align-self: center;
+        background-color: yellow;
+        height: 3px;
+        margin: 6px auto;
+        transition: 0.4s;
+        width: 30px;
+    }
+
+    .change .hamburger {
+        background-color: var(--primary-dark);
+        border-radius: 50%;
+        display: block;
+    }
+    
+    .change .hamburgerBunTop {
+        -webkit-transform: rotate(-45deg) translate(-7x, 7px) ;
+        transform: rotate(-45deg) translate(-7px, 7px) ;
+    }
+    
+    .change .hamburgerMeat {
+        opacity: 0;
+    }
+    
+    .change .hamburgerBunBottom {
+        -webkit-transform: rotate(45deg) translate(-6px, -6px) ;
+        transform: rotate(45deg) translate(-6px, -6px) ;
+    }
+}

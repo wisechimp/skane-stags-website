@@ -4,7 +4,7 @@ import { Carousel } from "react-bootstrap"
 import styles from "./imagecarousel.module.css"
 
 export default props => (
-  <Carousel fade="true">
+  <Carousel fade>
     <Carousel.Item>
       <img
         className="d-block w-100"

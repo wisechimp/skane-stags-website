@@ -1,0 +1,27 @@
+img.flagIcon {
+  height: 20px;
+  width: 30px;
+}
+.socialGroup {
+  padding: 0.5em;
+  align-self: center;
+  right: 1em;
+}
+.socialGroup a {
+  color: var(--primary-light);
+  padding-right: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .socialGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    right: 0;
+  }
+
+  .socialGroup a {
+    padding-right: unset;
+  }
+}
