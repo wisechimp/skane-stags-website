@@ -1,15 +1,14 @@
 import React from "react"
 
 import Header from "./header"
-import Menu from "./menu"
+import Menu from "./menu/menu"
 import Footer from "./footer"
 
-export default (props) => (
+export default ({ pageTitle, children }) => (
   <div>
     <Header />
-    <Menu
-      pageTitle={props.pageTitle}/>
-    {props.children}
+    <Menu pageTitle={pageTitle} />
+    {children}
     <Footer />
   </div>
 )
