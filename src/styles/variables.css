@@ -1,4 +1,6 @@
 :root {
+  --logo-desktop-height: 200px;
+  --logo-mobile-height: 300px;
   --primary-dark: darkred;
   --primary-contrast: rgb(255, 255, 0);
   --primary-light: white;

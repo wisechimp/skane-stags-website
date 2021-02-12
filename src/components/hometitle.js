@@ -1,15 +1,30 @@
 import React from "react"
+import Img from "gatsby-image"
 
-import styles from "./hometitle.module.css"
+import { headerContainer, brandname, logo } from "./hometitle.module.css"
 
-export default (props) => (
-  <div className={styles.headerContainer}>
-    <div className={styles.brandname}>
-      <h1>{props.title}</h1>
-      <h3><i>{props.tagline}</i></h3>
+export default ({ title, tagline, imgSrcs, imgAlt }) => {
+  console.log(imgSrcs)
+  const { mobileLogo, desktopLogo } = imgSrcs
+  const sources = [
+    mobileLogo.childImageSharp.fixed,
+    {
+      ...desktopLogo.childImageSharp.fixed,
+      media: `(min-width: 769px)`,
+    },
+  ]
+
+  return (
+    <div className={headerContainer}>
+      <div className={brandname}>
+        <h1>{title}</h1>
+        <h3>
+          <i>{tagline}</i>
+        </h3>
+      </div>
+      <div className={logo}>
+        <Img fixed={sources} alt={imgAlt} />
+      </div>
     </div>
-    <div className={styles.logo}>
-      <img className={styles.logo} src={props.imgSrc} alt={props.imgAlt} />
-    </div>
-  </div>
-)
+  )
+}

@@ -1,15 +1,10 @@
-img.logo {
-  margin: auto;
-  max-width: 300px;
-  max-height: 300px;
-  min-width: 150px;
-  min-height: 150px;
-}
 .brandname {
 	order: 1;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
   padding-left: 1em;
   padding-right: 1em;
-  /* min-height: 150px; */
   text-align: center;
 }
 .headerContainer {
@@ -21,17 +16,26 @@ img.logo {
   order: 0;
 	display: block;
 	margin: auto;
-	width: 100%;
+}
+.logo img {
+  margin: auto;
+  max-height: var(--logo-mobile-height);
+	max-width: var(--logo-mobile-height);
+  min-width: 150px;
+  min-height: 150px;
 }
 
 /*Reorders logo and title off phone*/
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 769px) {
 	.brandname {
 		order: 0;
-		width: 66.7%;
+		width: 60%;
 	}
 	.logo {
 		order: 1;
-		width: 33.3%;
+	}
+	.logo img {
+		max-height: var(--logo-desktop-height);
+		max-width: var(--logo-desktop-height);
 	}
 }
