@@ -1,17 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { Helmet } from "react-helmet"
 
-import ImageCarousel from "../components/imagecarousel"
 import HomeTitle from "../components/hometitle"
+import Jumbotron from "../components/jumbotron"
 import Layout from "../components/layout"
 import Video from "../components/video"
-import stagsLogo from "../images/skanestagslogo.png"
-import stagstraining2019 from "../images/2019stagsgenerictraining.jpg"
-import stags2017 from "../images/2017skanestagslund9steam.jpg"
-import stagsPolandAction from "../images/2018skanestagspolandaction.jpg"
 
-export default () => (
+export default ({ data }) => (
   <div>
     <Helmet>
       <meta property="og:title" content="Skane Stags Rugby League Club" />
@@ -33,20 +29,10 @@ export default () => (
       <HomeTitle
         title="Skåne Stags Rugby League Club"
         tagline="Skåne's representatives in the Swedish Rugby League's national championships."
-        imgSrc={stagsLogo}
+        imgSrcs={data}
         imgAlt="The logo of Skane Stags Rugby League club"
       />
-      <ImageCarousel
-        firstSlide={stagstraining2019}
-        firstSlideAlt="Picture of Skane Stags Rugby League being briefed during a trainng session. Malmö's turning tower can be seen in the background"
-        firstSlideCaption="Join us on Saturday mornings in Malmö!"
-        secondSlide={stagsPolandAction}
-        secondSlideAlt="Skane Stags rugby league team in action against Poland 2018."
-        secondSlideCaption="Action from the win against Poland."
-        thirdSlide={stags2017}
-        thirdSlideAlt="Skane Stags Rugby League team after winning the 2017 Skane 9\'s tournament"
-        thirdSlideCaption="2017 Skane 9's winners!"
-      />
+      <Jumbotron images={data} />
       <div className="bodyContent">
         <p>
           Rugby League is a fast, physical and fun sport with a lively social
@@ -72,7 +58,7 @@ export default () => (
           </a>{" "}
           for the latest schedule and news. All are welcome and talented players
           could make their way to the{" "}
-          <a href="https://www.facebook.com/swedenrugbyleague/">
+          <a href="https://www.swedenrugbyleague.com">
             Swedish National Team Squad
           </a>
           .
@@ -95,3 +81,40 @@ export default () => (
     </Layout>
   </div>
 )
+
+export const query = graphql`
+  query {
+    mobileJumboImage: file(
+      relativePath: { eq: "2018skanestagspolandaction.jpg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 800, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    desktopJumboImage: file(
+      relativePath: { eq: "2018skanestagspolandaction.jpg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 2000, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    mobileLogo: file(relativePath: { eq: "skanestagslogo.png" }) {
+      childImageSharp {
+        fixed(width: 300, quality: 100) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    desktopLogo: file(relativePath: { eq: "skanestagslogo.png" }) {
+      childImageSharp {
+        fixed(width: 200, quality: 100) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+  }
+`

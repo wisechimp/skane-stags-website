@@ -1,0 +1,7 @@
+.jumbotronic p{
+  background: var(--primary-dark);
+  color: var(--primary-light);
+  margin-top: 0;
+  padding: 0.5em 0;
+  text-align: center;
+}
