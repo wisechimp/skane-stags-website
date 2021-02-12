@@ -38,14 +38,12 @@ export default ({ data }) => (
           Rugby League is a fast, physical and fun sport with a lively social
           side!
         </p>
-        <br />
         <p>
           Skåne Stags were established in 2013 and are the current national
           champions. We have a blend of nationalities with ex-pats from the
           likes of England, Australia, France and Tonga joining local Swedish
           talent.
         </p>
-        <br />
         <p>
           We can be found training at{" "}
           <a href="https://www.google.se/maps/place/Limhamnsf%C3%A4ltet/@55.5953031,12.9474745,323m/data=!3m1!1e3!4m5!3m4!1s0x4653a697bedc6367:0xc54fe103ad8766d!8m2!3d55.5953031!4d12.9489246?hl=en">
@@ -63,7 +61,6 @@ export default ({ data }) => (
           </a>
           .
         </p>
-        <br />
         <p>
           Check out the highlights from our home 9's tournament in 2017
           featuring{" "}

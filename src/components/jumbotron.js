@@ -15,7 +15,10 @@ export default props => {
 
   return (
     <div className={jumbotronic}>
-      <Img fluid={sources} />
+      <Img
+        fluid={sources}
+        alt="Skane Stags player breaking through a tackle in Poland."
+      />
       <p>Skane Stags in action in Poland.</p>
     </div>
   )
