@@ -12,6 +12,11 @@ img.flagIcon {
   padding-right: 1em;
 }
 
+.socialGroup svg {
+  height: 1em;
+  width: 1em;
+}
+
 @media screen and (max-width: 768px) {
   .socialGroup {
     display: flex;
@@ -23,5 +28,10 @@ img.flagIcon {
 
   .socialGroup a {
     padding-right: unset;
+  }
+
+  .socialGroup svg {
+    height: 25px;
+    width: 25px;
   }
 }

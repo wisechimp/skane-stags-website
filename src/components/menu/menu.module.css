@@ -33,12 +33,14 @@
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
+  padding-inline-start: 10px;
   width: 50%;
 }
 
 .navLinks button {
   background: var(--primary-dark);
   border: none;
+  font-size: 18px;
   color: var(--primary-light);
   padding: unset
 }
@@ -49,6 +51,7 @@
 
 .navLinks li a {
   color: var(--primary-light);
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -78,10 +81,6 @@
   width: 40%
 }
 
-ul {
-  margin-bottom: unset;
-}
-
 /*
     Moving the "Action Bar" to the bottom when being used on a mobile for ease
     of use for mobile customers
@@ -107,6 +106,10 @@ ul {
     padding-left: 0;
     width: 100%
   }
+
+  .navLinks ul {
+  padding-left: 0;
+}
 
   .navUnit {
     background: var(--primary-dark);
