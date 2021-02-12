@@ -1,16 +1,13 @@
 .footer {
 	display: block;
 	margin: auto;
-  padding-top: 1em;
 	padding-bottom: 1em;
 	text-align: center;
-	width: 60%;
+	width: 70%;
 }
-.footerLogo {
-	display: block;
-	margin: 0 auto;
-	max-height: 150px;
-	max-width: 100%;
-  padding-bottom: 1em;
-  padding-top: 1em;
+
+@media screen and (max-width: 768px) {
+	.footer {
+		padding-bottom: 75px;
+	}
 }
