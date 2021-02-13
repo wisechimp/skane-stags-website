@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import get from "lodash/get"
 import { Link, graphql } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import Layout from "../components/layout"
 import KitCard from "../components/kitcard"
@@ -22,9 +23,13 @@ class Merchandise extends Component {
             periodically place bulk orders with our supplier and would add your
             request to the next shipment. All kit is made to order so
             unfortunately no refunds are possible. Please reference our{" "}
-            <a href="https://stag-sports.com/rugby-kits/sizing-information">
+            <OutboundLink
+              href="https://stag-sports.com/rugby-kits/sizing-information"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               manufacturer's website
-            </a>{" "}
+            </OutboundLink>{" "}
             for sizing information.
           </p>
           <div className="playerCardsContainer">

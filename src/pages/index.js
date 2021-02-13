@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { Helmet } from "react-helmet"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import HomeTitle from "../components/hometitle"
 import Jumbotron from "../components/jumbotron"
@@ -46,32 +47,68 @@ export default ({ data }) => (
         </p>
         <p>
           We can be found training at{" "}
-          <a href="https://www.google.se/maps/place/Limhamnsf%C3%A4ltet/@55.5953031,12.9474745,323m/data=!3m1!1e3!4m5!3m4!1s0x4653a697bedc6367:0xc54fe103ad8766d!8m2!3d55.5953031!4d12.9489246?hl=en">
+          <OutboundLink
+            href="https://www.google.se/maps/place/Limhamnsf%C3%A4ltet/@55.5953031,12.9474745,323m/data=!3m1!1e3!4m5!3m4!1s0x4653a697bedc6367:0xc54fe103ad8766d!8m2!3d55.5953031!4d12.9489246?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Limhamnsfältet
-          </a>{" "}
+          </OutboundLink>{" "}
           in Malmö every Saturday from 10am during the season. Check our{" "}
           <Link to="/calendar">calendar</Link> and{" "}
-          <a href="https://www.facebook.com/skanestags">
+          <OutboundLink
+            href="https://www.facebook.com/skanestags"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             follow us on Facebook
-          </a>{" "}
+          </OutboundLink>{" "}
           for the latest schedule and news. All are welcome and talented players
           could make their way to the{" "}
-          <a href="https://www.swedenrugbyleague.com">
+          <OutboundLink
+            href="https://www.swedenrugbyleague.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Swedish National Team Squad
-          </a>
+          </OutboundLink>
           .
         </p>
         <p>
           Check out the highlights from our home 9's tournament in 2017
           featuring{" "}
-          <a href="https://www.facebook.com/KungsbackaRugbyClub/">
+          <OutboundLink
+            href="https://www.facebook.com/KungsbackaRugbyClub/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Kungsbacka Broncos
-          </a>
+          </OutboundLink>
           ,{" "}
-          <a href="https://www.facebook.com/stockholm.rl/">Stockholm Kungar</a>{" "}
-          and <a href="https://www.facebook.com/CopenhagenRlfc/">Copenhagen</a>.
-          Footage courtesy of our very own{" "}
-          <a href="https://www.paulrhys.com/">Paul Rhys</a>.
+          <OutboundLink
+            href="https://www.facebook.com/stockholm.rl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Stockholm Kungar
+          </OutboundLink>{" "}
+          and{" "}
+          <OutboundLink
+            href="https://www.facebook.com/CopenhagenRlfc/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Copenhagen
+          </OutboundLink>
+          . Footage courtesy of our very own{" "}
+          <OutboundLink
+            href="https://www.paulrhys.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Paul Rhys
+          </OutboundLink>
+          .
         </p>
       </div>
       <Video videoId="AnQPQslLzkA" />

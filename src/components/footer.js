@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { footer, footerLogo } from "./footer.module.css"
 
@@ -37,13 +38,13 @@ export default () => {
     <div className={footer}>
       <p>
         Supported by{" "}
-        <a
+        <OutboundLink
           href="https://olearys.se/lund/"
           target="_blank"
           rel="nofollow noopener noreferrer"
         >
           O'Leary's
-        </a>{" "}
+        </OutboundLink>{" "}
         in Lund.
       </p>
       <br />
