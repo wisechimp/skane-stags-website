@@ -122,16 +122,16 @@ export default ({ data }) => (
 export const query = graphql`
   query {
     mobileJumboImage: file(
-      relativePath: { eq: "2018skanestagspolandaction.jpg" }
+      relativePath: { eq: "2018skanestagspolandactionmobile.jpg" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
+        fluid(maxWidth: 500, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     desktopJumboImage: file(
-      relativePath: { eq: "2018skanestagspolandaction.jpg" }
+      relativePath: { eq: "2018skanestagspolandactiondesktop.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 2000, quality: 100) {
@@ -139,14 +139,7 @@ export const query = graphql`
         }
       }
     }
-    mobileLogo: file(relativePath: { eq: "skanestagslogo.png" }) {
-      childImageSharp {
-        fixed(width: 300, quality: 100) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    desktopLogo: file(relativePath: { eq: "skanestagslogo.png" }) {
+    stagsLogo: file(relativePath: { eq: "skanestagslogo.png" }) {
       childImageSharp {
         fixed(width: 200, quality: 100) {
           ...GatsbyImageSharpFixed_withWebp

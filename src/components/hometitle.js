@@ -5,14 +5,7 @@ import { headerContainer, brandname, logo } from "./hometitle.module.css"
 
 export default ({ title, tagline, imgSrcs, imgAlt }) => {
   console.log(imgSrcs)
-  const { mobileLogo, desktopLogo } = imgSrcs
-  const sources = [
-    mobileLogo.childImageSharp.fixed,
-    {
-      ...desktopLogo.childImageSharp.fixed,
-      media: `(min-width: 769px)`,
-    },
-  ]
+  const { stagsLogo } = imgSrcs
 
   return (
     <div className={headerContainer}>
@@ -23,7 +16,7 @@ export default ({ title, tagline, imgSrcs, imgAlt }) => {
         </h3>
       </div>
       <div className={logo}>
-        <Img fixed={sources} alt={imgAlt} />
+        <Img fixed={stagsLogo.childImageSharp.fixed} alt={imgAlt} />
       </div>
     </div>
   )

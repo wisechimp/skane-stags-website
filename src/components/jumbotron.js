@@ -6,7 +6,10 @@ import { jumbotronic } from "./jumbotron.module.css"
 export default props => {
   const { mobileJumboImage, desktopJumboImage } = props.images
   const sources = [
-    mobileJumboImage.childImageSharp.fluid,
+    {
+      ...mobileJumboImage.childImageSharp.fluid,
+      media: `(max-width: 768px)`,
+    },
     {
       ...desktopJumboImage.childImageSharp.fluid,
       media: `(min-width: 769px)`,
