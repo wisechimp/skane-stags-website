@@ -111,7 +111,10 @@ export default ({ data }) => (
           .
         </p>
       </div>
-      <Video videoId="AnQPQslLzkA" />
+      <Video
+        videoId="AnQPQslLzkA"
+        altText="Footage from the 2017 Skane 9's tournament."
+      />
     </Layout>
   </div>
 )

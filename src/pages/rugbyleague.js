@@ -9,7 +9,7 @@ export default () => (
     <div className="bodyContent">
       <p>Check out the video below for a quick introduction to rugby league:</p>
     </div>
-    <Video videoId="vFwHtFJarhE" />
+    <Video videoId="vFwHtFJarhE" altText="An introduction to rugby league." />
     <div className="bodyContent">
       <br />
       <h3>

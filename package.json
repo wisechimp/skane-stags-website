@@ -18,7 +18,7 @@
     "axios": "^0.21.1",
     "dotenv": "^8.0.0",
     "gatsby": "^2.31.1",
-    "gatsby-cli": "^2.18.0",
+    "gatsby-cli": "^2.19.1",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-google-analytics": "^2.0.21",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -40,7 +40,7 @@
     "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.7.0",
-    "react-lite-yt-embed": "^1.2.4",
+    "react-lite-yt-embed": "^1.2.6",
     "reaptcha": "^1.4.2"
   },
   "devDependencies": {
