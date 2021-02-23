@@ -32,6 +32,6 @@ export default () => (
       name="twitter:image:alt"
       content="Skane Stags Rugby League Club logo."
     />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="/src/images/apple-touch-icon.png" />
   </Helmet>
 )
