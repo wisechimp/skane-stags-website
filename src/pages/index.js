@@ -141,8 +141,8 @@ export const query = graphql`
     }
     stagsLogo: file(relativePath: { eq: "skanestagslogo.png" }) {
       childImageSharp {
-        fixed(width: 200, quality: 100) {
-          ...GatsbyImageSharpFixed_withWebp
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

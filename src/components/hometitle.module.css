@@ -16,13 +16,7 @@
   order: 0;
 	display: block;
 	margin: auto;
-}
-.logo img {
-  margin: auto;
-  max-height: var(--logo-mobile-height);
-	max-width: var(--logo-mobile-height);
-  min-width: 150px;
-  min-height: 150px;
+	width: 200px;
 }
 
 /*Reorders logo and title off phone*/
@@ -33,9 +27,5 @@
 	}
 	.logo {
 		order: 1;
-	}
-	.logo img {
-		max-height: var(--logo-desktop-height);
-		max-width: var(--logo-desktop-height);
 	}
 }

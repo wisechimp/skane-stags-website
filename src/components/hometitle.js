@@ -16,7 +16,7 @@ export default ({ title, tagline, imgSrcs, imgAlt }) => {
         </h3>
       </div>
       <div className={logo}>
-        <Img fixed={stagsLogo.childImageSharp.fixed} alt={imgAlt} />
+        <Img fluid={stagsLogo.childImageSharp.fluid} alt={imgAlt} />
       </div>
     </div>
   )
