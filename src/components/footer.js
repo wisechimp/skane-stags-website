@@ -3,36 +3,23 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-import { footer, footerLogo } from "./footer.module.css"
+import { footer } from "./footer.module.css"
 
 export default () => {
   const data = useStaticQuery(graphql`
     query FooterQuery {
-      mobileFooterImage: file(relativePath: { eq: "olearysnewlogo.jpg" }) {
+      footerImage: file(relativePath: { eq: "olearysnewlogo.jpg" }) {
         childImageSharp {
-          fixed(width: 200, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
-        }
-      }
-      desktopFooterImage: file(relativePath: { eq: "olearysnewlogo.jpg" }) {
-        childImageSharp {
-          fixed(width: 500, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
+          fluid(maxWidth: 300, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
     }
   `)
 
-  const { mobileFooterImage, desktopFooterImage } = data
-  const sources = [
-    mobileFooterImage.childImageSharp.fixed,
-    {
-      ...desktopFooterImage.childImageSharp.fixed,
-      media: `(min-width: 769px)`,
-    },
-  ]
+  const { footerImage } = data
+  console.log(footerImage)
 
   return (
     <div className={footer}>
@@ -49,8 +36,7 @@ export default () => {
       </p>
       <br />
       <Img
-        className={footerLogo}
-        fixed={sources}
+        fluid={footerImage.childImageSharp.fluid}
         alt="Logo for o'Learys in Lund, sponsors of Skåne Stags Rugby League Club."
       />
       <p>Join us there after the game!</p>
