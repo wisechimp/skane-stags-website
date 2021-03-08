@@ -78,7 +78,7 @@ module.exports = {
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",
-        icon: "src/images/maskable_icon.png", // This path is relative to the root of the site.
+        icon: "src/images/icon.png", // This path is relative to the root of the site.
         icons: [
           {
             src: "/favicons/icon-48x48.png",
@@ -104,7 +104,6 @@ module.exports = {
             src: "/favicons/icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
-            purpose: "any maskable",
           },
           {
             src: "/favicons/icon-256x256.png",
