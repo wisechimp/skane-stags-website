@@ -4,22 +4,13 @@ import Img from "gatsby-image"
 import { jumbotronic } from "./jumbotron.module.css"
 
 export default props => {
-  const { mobileJumboImage, desktopJumboImage } = props.images
-  const sources = [
-    {
-      ...mobileJumboImage.childImageSharp.fluid,
-      media: `(max-width: 768px)`,
-    },
-    {
-      ...desktopJumboImage.childImageSharp.fluid,
-      media: `(min-width: 769px)`,
-    },
-  ]
+  const { jumboImage } = props.images
+  console.log(jumboImage)
 
   return (
     <div className={jumbotronic}>
       <Img
-        fluid={sources}
+        fluid={jumboImage.childImageSharp.fluid}
         alt="Skane Stags player breaking through a tackle in Poland."
       />
       <p>Skane Stags in action in Poland.</p>

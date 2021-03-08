@@ -121,16 +121,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    mobileJumboImage: file(
-      relativePath: { eq: "2018skanestagspolandactionmobile.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 500, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    desktopJumboImage: file(
+    jumboImage: file(
       relativePath: { eq: "2018skanestagspolandactiondesktop.jpg" }
     ) {
       childImageSharp {
