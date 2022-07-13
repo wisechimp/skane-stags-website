@@ -2,17 +2,15 @@ import React, { Component } from "react"
 import get from "lodash/get"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import ResultsCard from "../components/resultscard"
 
 class Results extends Component {
   render() {
-    const resultsList = get (this, 'props.data.allResultsJson.edges')
+    const resultsList = get(this, "props.data.allResultsJson.edges")
 
     return (
-      <Layout
-        pageTitle="Results"
-      >
+      <Layout pageTitle="Results">
         <h1>Results</h1>
         <div>
           {resultsList.map(({ node }) => {

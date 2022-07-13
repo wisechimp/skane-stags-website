@@ -1,55 +1,53 @@
-import React, { Component } from "react"
-import get from "lodash/get"
+import React from "react"
 import { graphql } from "gatsby"
-import Parser from "html-react-parser"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import NewsSnippet from "../components/newssnippet"
 
-class News extends Component {
-  render() {
-    const newsList = get(this, "props.data.allWordpressPost.edges")
-
-    return (
-      <Layout pageTitle="News">
-        <h1>News</h1>
-        <div>
-          {newsList.map(({ node }) => {
-            return (
-              <NewsSnippet
-                headline={Parser(node.title)}
-                snippet={Parser(node.excerpt)}
-                date={node.date}
-                slug={node.slug}
-                imgSrc={node.featured_media.localFile.childImageSharp.fluid}
-              />
-            )
-          })}
-        </div>
-      </Layout>
-    )
-  }
+export default ({ data }) => {
+  return (
+    <Layout pageTitle="Latest News">
+      <h1>Latest News</h1>
+      <div>
+        {data.allFile.nodes.map(({ childMdx }) => {
+          if (childMdx === null) {
+            return
+          }
+          const { id, excerpt, frontmatter } = childMdx
+          return (
+            <NewsSnippet
+              key={id}
+              headline={frontmatter.title}
+              date={frontmatter.date}
+              snippet={excerpt}
+              slug={frontmatter.path}
+              imgSrc={frontmatter.imageSrc.childImageSharp.fluid}
+            />
+          )
+        })}
+      </div>
+    </Layout>
+  )
 }
-
-export default News
 
 export const newsQuery = graphql`
   query {
-    allWordpressPost(sort: { fields: date, order: DESC }) {
-      edges {
-        node {
+    allFile(
+      filter: { sourceInstanceName: { eq: "news" } }
+      sort: { fields: childMdx___frontmatter___date, order: DESC }
+    ) {
+      nodes {
+        childMdx {
           id
-          title
-          content
           excerpt
-          date(formatString: "MMMM DD, YYYY")
-          slug
-          featured_media {
-            id
-            localFile {
+          frontmatter {
+            title
+            date(formatString: "Do MMMM, YYYY")
+            path
+            imageSrc {
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
