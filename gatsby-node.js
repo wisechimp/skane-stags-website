@@ -7,11 +7,13 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
     {
-      allWordpressPost {
-        edges {
-          node {
-            slug
-            wordpress_id
+      allFile(filter: { sourceInstanceName: { eq: "news" } }) {
+        nodes {
+          childMdx {
+            id
+            frontmatter {
+              path
+            }
           }
         }
       }
@@ -21,13 +23,16 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    const BlogPosts = result.data.allWordpressPost.edges
+    const BlogPosts = result.data.allFile.nodes
     BlogPosts.forEach(post => {
+      if (post.childMdx === null) {
+        return
+      }
       createPage({
-        path: `/news/${post.node.slug}`,
+        path: `/news/${post.childMdx.frontmatter.path}`,
         component: BlogPostTemplate,
         context: {
-          id: post.node.wordpress_id,
+          id: post.childMdx.id,
         },
       })
     })

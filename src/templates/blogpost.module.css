@@ -1,17 +1,23 @@
 .blogpostStyle {
-  padding: 1em;
+  padding: 1em 0;
 }
 .blogpostStyle figcaption {
   font-style: italic;
   text-align: center;
 }
-.blogpostStyle img {
+.blogpostStyle picture img{
   display: block;
 	margin: 0 auto;
-	max-width: 60%;
+  max-height: 640px;
   padding-top: 1em;
+  right: 0px;
 }
 .blogpostStyle p {
 	display: block;
 	margin: auto;
+  padding: 0 1em;
+}
+
+.imageWrapper {
+  max-height: 640px;
 }

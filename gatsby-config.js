@@ -37,7 +37,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `squad`,
-        path: `${__dirname}/src/markdown-pages/`,
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `news`,
+        path: `${__dirname}/src/newsstories`,
       },
     },
     {
@@ -45,26 +52,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-        // your wordpress source
-        baseUrl: `skanestags.news.blog`,
-        protocol: `https`,
-        // is it hosted on wordpress.com, or self-hosted?
-        hostingWPCOM: true,
-        minimizeDeprecationNotice: true,
-        // does your site use the Advanced Custom Fields Plugin?
-        useACF: false,
-        perPage: 10,
-        auth: {
-          wpcom_app_clientSecret: process.env.WPCOM_APP_CLIENT_SECRET,
-          wpcom_app_clientId: process.env.WPCOM_APP_CLIENTID,
-          wpcom_user: process.env.WPCOM_USERNAME,
-          wpcom_pass: process.env.WPCOM_PASSWORD,
-        },
       },
     },
     {

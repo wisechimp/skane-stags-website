@@ -1,36 +1,62 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Parser from "html-react-parser"
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import Img from "gatsby-image"
 
-import Layout from "../components/layout"
-import styles from "./blogpost.module.css"
+import Layout from "../components/Layout"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+import blogStyles from "./blogpost.module.css"
 
-const BlogPostTemplate = ({ data }) => (
-  <Layout
-    pageTitle={Parser(data.wordpressPost.title)}
-  >
-    <div className={styles.blogpostStyle}>
-      <h1>{Parser(data.wordpressPost.title)}</h1>
-      <p>
-        Written by {data.wordpressPost.author.name} on {data.wordpressPost.date}
-      </p>
-      <br />
-      <p dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }} />
-    </div>
-  </Layout>
-)
+const mdxComponents = { OutboundLink }
+
+const BlogPostTemplate = ({ data }) => {
+  const { frontmatter, body } = data.mdx
+
+  return (
+    <Layout pageTitle="News">
+      <div className={blogStyles.blogpostStyle}>
+        <h1>{frontmatter.title}</h1>
+        <p>
+          Posted by {frontmatter.author} on {frontmatter.date}
+        </p>
+        <div className={blogStyles.imageWrapper}>
+          <Img
+            fluid={frontmatter.imageSrc.childImageSharp.fluid}
+            alt=""
+            imgStyle={{
+              objectFit: "fill",
+              objectPosition: "0px 0px",
+              width: "fit-content",
+            }}
+          />
+        </div>
+        <br />
+        <MDXProvider components={mdxComponents}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
+      </div>
+    </Layout>
+  )
+}
 
 export default BlogPostTemplate
 
 export const query = graphql`
-  query($id: Int!) {
-    wordpressPost(wordpress_id: {eq: $id }) {
-      title
-      content
-      excerpt
-      date(formatString: "MMMM DD, YYYY")
-      author {
-        name
+  query PostsById($id: String!) {
+    mdx(id: { eq: $id }) {
+      body
+      frontmatter {
+        author
+        title
+        date(formatString: "Do MMMM, YYYY")
+        imageSrc {
+          childImageSharp {
+            fluid(maxWidth: 1000, quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
   }
