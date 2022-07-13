@@ -24,10 +24,9 @@ const BlogPostTemplate = ({ data }) => {
           <Img
             fluid={frontmatter.imageSrc.childImageSharp.fluid}
             alt=""
+            style={{ height: "100%", width: "100%" }}
             imgStyle={{
-              objectFit: "fill",
-              objectPosition: "0px 0px",
-              width: "fit-content",
+              objectFit: "contain",
             }}
           />
         </div>
@@ -52,7 +51,7 @@ export const query = graphql`
         date(formatString: "Do MMMM, YYYY")
         imageSrc {
           childImageSharp {
-            fluid(maxWidth: 1000, quality: 100) {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
