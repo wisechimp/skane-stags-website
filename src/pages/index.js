@@ -5,7 +5,7 @@ import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import HomeTitle from "../components/hometitle"
 import Jumbotron from "../components/jumbotron"
-import Layout from "../components/Layout"
+import Layout from "../components/layout/Layout"
 import Video from "../components/video"
 
 export default ({ data }) => (

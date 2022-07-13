@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import get from "lodash/get"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout/Layout"
 import PlayerCard from "../components/playercard"
 
 class Squad extends Component {

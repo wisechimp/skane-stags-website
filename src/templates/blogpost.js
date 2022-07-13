@@ -4,7 +4,7 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout/Layout"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 import blogStyles from "./blogpost.module.css"
 

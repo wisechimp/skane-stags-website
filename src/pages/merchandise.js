@@ -3,7 +3,7 @@ import get from "lodash/get"
 import { Link, graphql } from "gatsby"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout/Layout"
 import KitCard from "../components/kitcard"
 
 class Merchandise extends Component {

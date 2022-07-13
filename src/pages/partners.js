@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout/Layout"
 
 export default ({ data }) => {
   console.log(data)
