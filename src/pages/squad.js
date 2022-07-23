@@ -7,14 +7,14 @@ import PlayerCard from "../components/playercard"
 
 class Squad extends Component {
   render() {
-    const playerProfiles = get(this, "props.data.allMdx.edges")
+    const playerProfiles = get(this, "props.data.allFile.nodes")
     console.log(playerProfiles)
 
     return (
       <Layout pageTitle="Squad">
         <h1>Squad</h1>
         <div className="playerCardsContainer">
-          {playerProfiles.map(({ node }) => {
+          {playerProfiles.map(({ childMdx }) => {
             const {
               flag,
               imageSrc,
@@ -23,7 +23,7 @@ class Squad extends Component {
               position,
               sponsor,
               title,
-            } = node.frontmatter
+            } = childMdx.frontmatter
             return (
               <PlayerCard
                 key={number}
@@ -46,9 +46,12 @@ export default Squad
 
 export const playerQuery = graphql`
   query {
-    allMdx(sort: { fields: frontmatter___number }) {
-      edges {
-        node {
+    allFile(
+      filter: { sourceInstanceName: { eq: "squad" } }
+      sort: { fields: childMdx___frontmatter___number }
+    ) {
+      nodes {
+        childMdx {
           frontmatter {
             number
             nationality
