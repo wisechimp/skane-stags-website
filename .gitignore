@@ -36,6 +36,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Next Build directories
+.next
+
 # Typescript v1 declaration files
 typings/
 
@@ -53,10 +56,6 @@ typings/
 
 # dotenv environment variables file
 .env
-
-# gatsby files
-.cache/
-public
 
 # Mac files
 .DS_Store
