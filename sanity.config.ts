@@ -1,6 +1,6 @@
 import { defineConfig } from "sanity"
 import { deskTool } from "sanity/desk"
-// import schemas from "./sanity/schemas"
+import schemas from "./sanity/schemas"
 
 const config = defineConfig({
   title: "Skane Stags Content",
@@ -9,9 +9,9 @@ const config = defineConfig({
   apiVersion: "2023-06-28",
   basePath: "/studio",
   plugins: [deskTool()],
-  /* schema: {
+  schema: {
     types: schemas,
-  }, */
+  },
 })
 
 export default config

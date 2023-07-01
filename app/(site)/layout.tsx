@@ -1,16 +1,22 @@
-import Footer from "@/components/footer/Footer"
-import HeaderMenu from "@/components/menus/HeaderMenu"
-import SocialMenu from "@/components/menus/SocialMenu"
+import { getPartners } from "@/sanity/sanity-utils"
 
-const RootLayout = ({ children }) => {
+import Footer from "../components/footer/Footer"
+import HeaderMenu from "../components/menus/HeaderMenu"
+import SocialMenu from "../components/menus/SocialMenu"
+import { bebasNeue, ptSans } from '../utils/fonts'
+
+import '../styles/skane-stags-global-styles.css'
+
+const RootLayout = async ({ children }) => {
+  const partners = await getPartners()
   return (
-    <html lang="en">
+    <html lang="en" className={`${bebasNeue.variable} ${ptSans.variable}`}>
       <body>
         <main>
           <SocialMenu />
           <HeaderMenu />
           {children}
-          <Footer />
+          <Footer partners={partners} />
         </main>
       </body>
     </html>

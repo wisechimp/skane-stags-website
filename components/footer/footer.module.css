@@ -1,0 +1,37 @@
+.footerContainer {
+  background-color: var(--primary-light);
+  padding: 1em;
+  width: 100%
+}
+
+.footerContainer h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.footerPartnersContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+.footerPartnersContainer img{
+  object-fit: scale-down;
+}
+
+.footerYourName {
+  background-color: var(--primary-dark);
+  border: 2px solid var(--primary-contrast);
+  color: var(--primary-contrast-light);
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  width: 30%
+}
+
+.footerYourName p {
+  margin-block: 0.5em 0 0 0;
+}

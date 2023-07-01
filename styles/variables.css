@@ -1,5 +1,6 @@
 :root {
-  --primary-dark: red;
+  --primary-dark: rgb(255,0,0);
   --primary-contrast: rgb(255, 255, 0);
-  --primary-light: white;
+  --primary-contrast-light: rgb(255, 255, 174);
+  --primary-light: rgba(255,0,0,0.5);
 }
