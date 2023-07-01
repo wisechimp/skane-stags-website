@@ -1,6 +1,6 @@
-import Footer from "../components/footer/Footer"
-import HeaderMenu from "../components/menus/HeaderMenu"
-import SocialMenu from "../components/menus/SocialMenu"
+import Footer from "@/components/footer/Footer"
+import HeaderMenu from "@/components/menus/HeaderMenu"
+import SocialMenu from "@/components/menus/SocialMenu"
 
 const RootLayout = ({ children }) => {
   return (
