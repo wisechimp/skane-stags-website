@@ -1,8 +1,13 @@
+import { getPartners } from "@/sanity/sanity-utils"
+
 import Footer from "../components/footer/Footer"
 import HeaderMenu from "../components/menus/HeaderMenu"
 import SocialMenu from "../components/menus/SocialMenu"
 
-const RootLayout = ({ children }) => {
+import '../styles/skane-stags-global-styles.css'
+
+const RootLayout = async ({ children }) => {
+  const partners = await getPartners()
   return (
     <html lang="en">
       <body>
@@ -10,7 +15,7 @@ const RootLayout = ({ children }) => {
           <SocialMenu />
           <HeaderMenu />
           {children}
-          <Footer />
+          <Footer partners={partners} />
         </main>
       </body>
     </html>
