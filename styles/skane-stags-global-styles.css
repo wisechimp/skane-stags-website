@@ -1,7 +1,7 @@
 @import './variables.css';
 
 html {
-	font-family: var(--font-pt-sans), Arial, sans-serif;
+	font-family: var(--font-body-text), Arial, sans-serif;
 }
 
 body {
@@ -9,6 +9,6 @@ body {
 }
 
 h1, h2, h3 {
-	font-family: var(--font--bebas-neue);
+	font-family: var(--font-headers-and-butts);
 	margin-block: 0;
 }
