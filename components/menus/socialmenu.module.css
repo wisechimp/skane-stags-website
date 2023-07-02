@@ -1,0 +1,19 @@
+.socialMenuContainer {
+  background: var(--primary-dark);
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-family: var(--font-headers-and-butts);
+}
+
+.socialMenuContainer a {
+  color: var(--primary-contrast-light);
+  font-size: 1.25em;
+  text-decoration: none;
+}
+
+.socialMenuIcons {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}

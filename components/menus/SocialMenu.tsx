@@ -6,11 +6,13 @@ import {
   FaYoutube,
 } from "react-icons/fa"
 
+import * as styles from './socialmenu.module.css'
+
 const SocialMenu = () => {
   return (
-    <div>
+    <div className={styles.socialMenuContainer}>
       <Link href="/contact">Contact</Link>
-      <div>
+      <div className={styles.socialMenuIcons}>
         <Link href="https://www.facebook.com/skanestags/">
           <FaFacebookSquare />
         </Link>
