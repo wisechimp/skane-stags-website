@@ -1,5 +1,5 @@
 .footerContainer {
-  background-color: var(--primary-light);
+  background-color: var(--primary-dark-light);
   padding: 1em;
   width: 100%
 }
@@ -29,7 +29,7 @@
   padding: 1em;
   text-align: center;
   text-transform: uppercase;
-  width: 30%
+  width: 30%;
 }
 
 .footerYourName p {

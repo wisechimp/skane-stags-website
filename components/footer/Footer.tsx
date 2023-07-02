@@ -26,8 +26,12 @@ const Footer = ({ partners }: FooterProps) => {
         ))}
       </div>
       <div className={styles.footerYourName}>
-        <h3>Your Logo Here!</h3>
-        <p><b>Click</b> for more information</p>
+        <p>
+          <b>Your Logo Here!</b>
+        </p>
+        <p>
+          <b>Click</b> for more information
+        </p>
       </div>
     </div>
   )
