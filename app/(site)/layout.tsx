@@ -1,4 +1,4 @@
-import { getPartners } from "@/sanity/sanity-utils"
+import { getMenuItems, getPartners } from "@/sanity/sanity-utils"
 
 import Footer from "@/components/footer/Footer"
 import HeaderMenu from "@/components/menus/HeaderMenu"
@@ -8,13 +8,14 @@ import { headersAndButtsFont, bodyTextFont } from '@/utils/fonts'
 import '@/styles/skane-stags-global-styles.css'
 
 const RootLayout = async ({ children }) => {
+  const menuItems = await getMenuItems()
   const partners = await getPartners()
   return (
     <html lang="en" className={`${headersAndButtsFont.variable} ${bodyTextFont.variable}`}>
       <body>
         <main>
           <SocialMenu />
-          <HeaderMenu />
+          <HeaderMenu menuItems={menuItems} />
           {children}
           <Footer partners={partners} />
         </main>

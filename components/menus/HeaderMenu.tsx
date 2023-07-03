@@ -1,11 +1,36 @@
 import Link from "next/link"
 
+import StagsLogo from '@/images/skane-stags-tn-logo.webp'
 import * as styles from './headermenu.module.css'
+import Image from "next/image"
+import MenuItem from "@/types/MenuItem"
 
-const HeaderMenu = () => {
+interface HeaderMenuProps {
+  menuItems: Array<MenuItem>
+}
+
+const HeaderMenu = ({ menuItems }: HeaderMenuProps) => {
+  console.log(JSON.stringify(menuItems))
+
   return (
     <div className={styles.headerMenuContainer}>
-      <Link href="/about">About</Link>
+      <Link href="/">
+        <div className={styles.headerMenuLogoContainer}>
+          <Image
+            src={StagsLogo}
+            alt="Skane Stags logo"
+            width={60}
+            height={60}
+          />
+        </div>
+      </Link>
+      {menuItems.map(menuitem => (
+        <div key={menuitem._id} className={styles.headerMenuItems}>
+          <Link href={`/${menuitem.slug}`}>
+            {menuitem.name}
+          </Link>
+        </div>
+      ))}
     </div>
   )
 }

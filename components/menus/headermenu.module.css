@@ -1,5 +1,6 @@
 .headerMenuContainer {
   background: var(--primary-contrast);
+  display: flex;
   padding: 1em;
 }
 
@@ -8,4 +9,16 @@
   font-family: var(--font-headers-and-butts);
   font-size: 1.25em;
   text-decoration: none;
+}
+
+.headerMenuItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1em;
+}
+
+.headerMenuLogoContainer {
+  display: flex;
+  justify-content: center;
 }
