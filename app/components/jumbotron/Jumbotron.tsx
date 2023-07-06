@@ -6,7 +6,7 @@ import { PortableText } from '@portabletext/react'
 const Jumbotron = ({ image, imageAlt, content }) => {
   return (
     <div className={styles.jumbotronContainer}>
-      <Image src={image} alt={imageAlt} width={1024} height={678} />
+      <Image src={image} alt={imageAlt} width={1024} height={678} priority={true} />
       <div className={styles.jumbotronText}>
         <PortableText value={content} />
       </div>
