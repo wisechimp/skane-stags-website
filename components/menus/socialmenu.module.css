@@ -3,11 +3,11 @@
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  font-family: var(--font-headers-and-butts);
 }
 
 .socialMenuContainer a {
   color: var(--primary-contrast-light);
+  font-family: var(--font-headers-and-butts);
   font-size: 1.25em;
   text-decoration: none;
 }
