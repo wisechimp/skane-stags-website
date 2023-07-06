@@ -24,6 +24,7 @@
     "sanity": "^3.13.0"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.29.5-appdir.0",
     "@sanity/ui": "^1.7.0",
     "@types/node": "^20.3.2",
     "@types/react": "^18.2.14",
