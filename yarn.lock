@@ -1593,7 +1593,7 @@
     picocolors "^1.0.0"
     tslib "^2.5.0"
 
-"@portabletext/react@^3.0.0":
+"@portabletext/react@^3.0.0", "@portabletext/react@^3.0.4":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-3.0.4.tgz#cd1316c782b227fad206fd3147e1c9d60aa933a8"
   integrity sha512-M15IXRgoOgWiu3WxwdCZPpi/0sdP2KrMcRKCZFHI4D2nkhXO1A8Avs6Djc+uPg5ayfnCxewLl/FnXA0hFgccBw==
