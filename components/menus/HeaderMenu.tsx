@@ -10,8 +10,10 @@ interface HeaderMenuProps {
 }
 
 const HeaderMenu = ({ menuItems }: HeaderMenuProps) => {
-  console.log(JSON.stringify(menuItems))
-
+  const noHomeArray = menuItems.filter(menuItem => {
+    return menuItem.slug !== 'home' && menuItem.slug !== 'contact'
+  })
+  console.log(noHomeArray)
   return (
     <div className={styles.headerMenuContainer}>
       <Link href="/">
@@ -24,7 +26,7 @@ const HeaderMenu = ({ menuItems }: HeaderMenuProps) => {
           />
         </div>
       </Link>
-      {menuItems.map(menuitem => (
+      {noHomeArray.map(menuitem => (
         <div key={menuitem._id} className={styles.headerMenuItems}>
           <Link href={`/${menuitem.slug}`}>
             {menuitem.name}

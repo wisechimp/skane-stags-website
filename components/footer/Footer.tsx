@@ -8,8 +8,6 @@ interface FooterProps {
 }
 
 const Footer = ({ partners }: FooterProps) => {
-  console.log(JSON.stringify(partners))
-
   return (
     <div className={styles.footerContainer}>
       <h2>Principal Partners</h2>
