@@ -1,6 +1,6 @@
 import { getPage } from "@/sanity/sanity-utils"
 
-import Jumbotron from "@/components/jumbotron/Jumbotron"
+import Jumbotron from "@/app/components/jumbotron/Jumbotron"
 import { PortableText } from "@portabletext/react"
 
 type PageProps = {

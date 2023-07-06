@@ -1,8 +1,8 @@
 import { getMenuItems, getPartners } from "@/sanity/sanity-utils"
 
-import Footer from "@/components/footer/Footer"
-import HeaderMenu from "@/components/menus/HeaderMenu"
-import SocialMenu from "@/components/menus/SocialMenu"
+import Footer from "@/app/components/footer/Footer"
+import HeaderMenu from "@/app/components/menus/HeaderMenu"
+import SocialMenu from "@/app/components/menus/SocialMenu"
 import { headersAndButtsFont, bodyTextFont } from '@/utils/fonts'
 
 import '@/styles/skane-stags-global-styles.css'
