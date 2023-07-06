@@ -1,2 +1,5 @@
-[build.environment]
-  NODE_VERSION = "18.13.0"
+[build]
+  command = "next build"
+  environment = { NODE_VERSION = "18.13.0" }
+  publish = '.next'
+  
