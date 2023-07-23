@@ -2,7 +2,7 @@
 
 import { useState, createRef } from "react"
 import { useRouter } from "next/navigation"
-import Recaptcha from "react-google-recaptcha"
+import Recaptcha, { ReCAPTCHA } from "react-google-recaptcha"
 
 import * as styles from "./contactform.module.css"
 
@@ -24,7 +24,7 @@ function encode(data) {
 
 const ContactForm = () => {
   const [state, setState] = useState({})
-  const recaptchaRef = createRef()
+  const recaptchaRef = createRef<ReCAPTCHA>()
   const router = useRouter()
 
   const handleChange = e => {
@@ -37,7 +37,7 @@ const ContactForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    const recaptchaValue = recaptchaRef.current.getValue()
+    const recaptchaValue = recaptchaRef.current?.getValue()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
