@@ -24,6 +24,7 @@ function encode(data) {
 
 const ContactForm = () => {
   const [state, setState] = useState({})
+  const [buttonDisabled, setButtonDisabled] = useState(true)
   const recaptchaRef = createRef<ReCAPTCHA>()
   const router = useRouter()
 
@@ -117,8 +118,8 @@ const ContactForm = () => {
                 onChange={handleChange}
               />
             </p>
-            <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
-            <button className={styles.formButton} type="submit">
+            <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} onChange={() => setButtonDisabled(false)} />
+            <button className={styles.formButton} type="submit" disabled={buttonDisabled}>
               Send Message
             </button>
           </div>
