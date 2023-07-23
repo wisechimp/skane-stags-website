@@ -3,6 +3,7 @@ import Page from '@/types/Page'
 import Partner from "@/types/Partner";
 import { groq } from "next-sanity";
 import clientConfig from "./config/client-config";
+import NewsItem from "@/types/NewsItem";
 
 const getMenuItems = async (): Promise<MenuItem[]> => {
   return clientConfig.fetch(
@@ -30,6 +31,35 @@ const getPage = async (slug: string): Promise<Page> => {
   )
 }
 
+const getNewsItems = async (): Promise<NewsItem[]> => {
+  return clientConfig.fetch(
+    groq`*[_type == "news"]{
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current,
+      "mainImage": mainImage.asset->url,
+      "mainImageAltText": mainImage.altText,
+    }`
+  )
+}
+
+const getNews = async (slug: string): Promise<Page> => {
+  return clientConfig.fetch(
+    groq`*[_type == "news" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current,
+      content,
+      "mainImage": mainImage.asset->url,
+      "mainImageAltText": mainImage.altText,
+      publishedOn
+    }`,
+    { slug: slug }
+  )
+}
+
 const getPartners = async (): Promise<Partner[]> => {
   return clientConfig.fetch(
     groq`*[_type == "partner"]{
@@ -43,4 +73,4 @@ const getPartners = async (): Promise<Partner[]> => {
   )
 }
 
-export { getMenuItems, getPage, getPartners }
+export { getMenuItems, getPage, getNews, getNewsItems, getPartners }
