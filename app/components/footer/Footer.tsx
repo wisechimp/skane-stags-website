@@ -2,6 +2,7 @@ import Partner from "@/types/Partner"
 import Image from "next/image"
 
 import * as styles from './footer.module.css'
+import Link from "next/link"
 
 interface FooterProps {
   partners: Array<Partner>
@@ -17,7 +18,7 @@ const Footer = ({ partners }: FooterProps) => {
             <Image
               src={partner.logo}
               alt={partner.logoAltText}
-              width={500}
+              width={350}
               height={250}
             />
           </div>
@@ -27,8 +28,8 @@ const Footer = ({ partners }: FooterProps) => {
         <p>
           <b>Your Logo Here!</b>
         </p>
-        <p>
-          <b>Click</b> for more information
+        <p className={styles.footerLink}>
+          <Link href="/contact">Click</Link> for more information
         </p>
       </div>
     </div>

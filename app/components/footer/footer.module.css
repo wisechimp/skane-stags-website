@@ -4,9 +4,14 @@
   width: 100%
 }
 
-.footerContainer h2 {
+.footerContainer :is(h2) {
   display: flex;
   justify-content: center;
+}
+
+.footerLink :is(a) {
+  color: var(--primary-contrast-light);
+  font-weight: 700;
 }
 
 .footerPartnersContainer {
@@ -17,7 +22,7 @@
   padding: 1em;
 }
 
-.footerPartnersContainer img{
+.footerPartnersContainer :is(img){
   object-fit: scale-down;
 }
 
@@ -32,6 +37,6 @@
   width: 30%;
 }
 
-.footerYourName p {
+.footerYourName :is(p) {
   margin-block: 0.5em 0 0 0;
 }
