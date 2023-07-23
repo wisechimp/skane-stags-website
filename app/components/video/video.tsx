@@ -1,11 +1,12 @@
-import React from "react"
+"use client"
+
 import { LiteYoutubeEmbed } from "react-lite-yt-embed"
 
-import { videoWrapper } from "./video.module.css"
+import * as styles from "./video.module.css"
 
 const Video = ({ videoId, altText }) => {
   return (
-    <div className={videoWrapper}>
+    <div className={styles.videoWrapper}>
       <LiteYoutubeEmbed
         id={videoId}
         lazyImage

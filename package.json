@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^3.7.0",
-    "react-lite-yt-embed": "^1.2.6",
+    "react-lite-yt-embed": "^1.2.7",
     "sanity": "^3.13.0"
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     "@types/node": "^20.3.2",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/react-google-recaptcha": "^2.1.5",
     "eslint": "^8.43.0",
     "eslint-config-next": "^13.4.7",
     "prettier": "^1.17.0",

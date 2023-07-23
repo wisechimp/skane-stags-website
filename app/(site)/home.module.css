@@ -12,3 +12,16 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.videoPanel {
+  background-color: var(--primary-dark);
+}
+
+.videoPanel :is(h2) {
+  padding: 1em
+}
+
+.videoPanel :is(p) {
+  margin: 0;
+  padding: 0 1em 1em
+}

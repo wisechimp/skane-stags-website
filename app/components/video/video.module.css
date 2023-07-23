@@ -1,5 +1,6 @@
 .videoWrapper {
-  margin-top: 1em;
+	background-color: var(--primary-dark);
+	padding: 0 2em 2em;
 	position: relative;
 	overflow: hidden;
 }
