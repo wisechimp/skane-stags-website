@@ -33,13 +33,14 @@ const getPage = async (slug: string): Promise<Page> => {
 
 const getNewsItems = async (): Promise<NewsItem[]> => {
   return clientConfig.fetch(
-    groq`*[_type == "news"]{
+    groq`*[_type == "news" ] | order(publishedOn desc) {
       _id,
       _createdAt,
       title,
       "slug": slug.current,
       "mainImage": mainImage.asset->url,
       "mainImageAltText": mainImage.altText,
+      publishedOn
     }`
   )
 }

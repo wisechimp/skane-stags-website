@@ -1,0 +1,6 @@
+.newsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1em 1em 0.5em;
+}
