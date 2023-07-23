@@ -1,0 +1,14 @@
+.latestNewsContainer {
+  background-color: var(--primary-contrast);
+}
+
+.latestNewsContainer :is(h2) {
+  padding: 1em
+}
+
+.latestNewsCardsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
