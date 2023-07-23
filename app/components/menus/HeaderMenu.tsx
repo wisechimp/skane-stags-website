@@ -11,7 +11,7 @@ interface HeaderMenuProps {
 
 const HeaderMenu = ({ menuItems }: HeaderMenuProps) => {
   const noHomeArray = menuItems.filter(menuItem => {
-    return menuItem.slug !== 'home' && menuItem.slug !== 'contact'
+    return menuItem.slug !== 'home' && menuItem.slug !== 'thanks'
   })
   console.log(noHomeArray)
   return (
