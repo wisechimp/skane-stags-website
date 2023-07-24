@@ -6,7 +6,7 @@ type Page = {
   title: string
   slug: string
   mainImage: string
-  mainImageAlt: string
+  mainImageAltText: string
   content: PortableTextBlock[]
 }
 

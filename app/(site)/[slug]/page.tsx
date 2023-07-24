@@ -10,12 +10,12 @@ type PageProps = {
 const Page = async ({ params }: PageProps) => {
   const slug = params.slug
   const page = await getPage(slug)
-  const { content, mainImage, mainImageAlt } = page
+  const { content, mainImage, mainImageAltText } = page
 
   return (
     <div>
       {mainImage 
-        ? <Jumbotron image={mainImage} imageAlt={mainImageAlt} content={content}/>
+        ? <Jumbotron image={mainImage} imageAlt={mainImageAltText} content={content}/>
         : <PortableText value={content} />}
     </div>
   )

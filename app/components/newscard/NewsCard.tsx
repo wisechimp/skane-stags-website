@@ -4,7 +4,7 @@ import Link from "next/link"
 import * as styles from './newscard.module.css'
 
 const NewsCard = ({newsItem}) => {
-  const { title, publishedOn, slug, mainImage, mainImageAlt } = newsItem
+  const { title, publishedOn, slug, mainImage, mainImageAltText } = newsItem
   return (
     <div className={styles.newsCardContainer}>
       <div className={styles.newsCardLeftRibbon}>
@@ -12,7 +12,7 @@ const NewsCard = ({newsItem}) => {
       </div>
       <Image
         src={mainImage}
-        alt={mainImageAlt}
+        alt={mainImageAltText}
         width={320}
         height={400}
         style={{ objectFit: "cover" }}
