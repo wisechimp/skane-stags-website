@@ -18,6 +18,14 @@
   width: 50%;
 }
 
+.jumbotronLandscapeText {
+  max-width: 50%;
+}
+
+.jumbotronPortraitText {
+  max-width: 50%;
+}
+
 .jumbotronText {
   display: flex;
   flex-direction: column;
@@ -40,6 +48,10 @@
     object-fit: scale-down;
     width: 100%
   }
+
+  .jumbotronLandscapeText {
+    max-width: none;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -51,5 +63,9 @@
   .jumbotronContainerPortrait :is(img) {
     object-fit: scale-down;
     width: 100%
+  }
+
+  .jumbotronPortraitText {
+    max-width: none;
   }
 }

@@ -23,7 +23,13 @@ const Jumbotron = ({ data }) => {
           (min-width: 1200px) 50vw, 100vw"
         priority={true}
       />
-      <div className={styles.jumbotronText}>
+      <div
+        className={`${styles.jumbotronText}
+          ${mainImageOrientation > 1
+            ? styles.jumbotronPortraitText
+            : styles.jumbotronLandscapeText}`
+        }
+      >
         <h3>{publishedOn}</h3>
         <PortableText value={content} />
       </div>
