@@ -7,6 +7,8 @@ type Page = {
   slug: string
   mainImage: string
   mainImageAltText: string
+  mainImageHeight: number
+  mainImageWidth: number
   content: PortableTextBlock[]
 }
 

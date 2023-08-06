@@ -1,37 +1,55 @@
-.jumbotronContainer {
+.jumbotronContainerLandscape {
   align-items: center;
   display: flex;
 }
 
-.jumbotronContainer img {
+.jumbotronContainerPortrait {
+  align-items: center;
+  display: flex;
+}
+
+.jumbotronContainerLandscape :is(img) {
+  object-fit:cover;
+  width: 50%;
+}
+
+.jumbotronContainerPortrait :is(img) {
   object-fit: scale-down;
-  height: fit-content;
   width: 50%;
 }
 
 .jumbotronText {
   display: flex;
   flex-direction: column;
-  padding: 0.5em 2em;
+  padding: 0.5em 1em;
 }
 
-.jumbotronText p {
+.jumbotronText :is(p) {
   margin-block: 0;
   padding: 0.5em 0;
 }
 
-@media screen and (max-width: 512px) {
-  .jumbotronContainer {
+@media screen and (max-width: 1000px) {
+  .jumbotronContainerLandscape {
     display: flex;
     flex-direction: column;
   }
 
-  .jumbotronContainer img {
-    object-fit: scale-down;
+  .jumbotronContainerLandscape :is(img) {
     height: fit-content;
-    width: 100%;
+    object-fit: scale-down;
+    width: 100%
   }
-  .jumbotronText {
-    padding: 0.5em 1em;
+}
+
+@media screen and (max-width: 800px) {
+  .jumbotronContainerPortrait {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jumbotronContainerPortrait :is(img) {
+    object-fit: scale-down;
+    width: 100%
   }
 }

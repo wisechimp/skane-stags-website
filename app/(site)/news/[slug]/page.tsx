@@ -10,15 +10,13 @@ type NewsProps = {
 const Page = async ({ params }: NewsProps) => {
   const slug = params.slug
   const page = await getNews(slug)
-  const { content, mainImage, mainImageAltText } = page
+  const { content, mainImage } = page
 
   return (
     <div>
       {mainImage ? (
         <Jumbotron
-          image={mainImage}
-          imageAlt={mainImageAltText}
-          content={content}
+          data={page}
         />
       ) : (
         <PortableText value={content} />

@@ -5,6 +5,8 @@ type NewsItem = {
   slug: string
   mainImage: string
   mainImageAlt: string
+  mainImageHeight: number
+  mainImageWidth: number
 }
 
 export default NewsItem

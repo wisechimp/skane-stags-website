@@ -13,7 +13,6 @@ const HeaderMenu = ({ menuItems }: HeaderMenuProps) => {
   const noHomeArray = menuItems.filter(menuItem => {
     return menuItem.slug !== 'home' && menuItem.slug !== 'thanks'
   })
-  console.log(noHomeArray)
   return (
     <div className={styles.headerMenuContainer}>
       <Link href="/">
@@ -23,6 +22,7 @@ const HeaderMenu = ({ menuItems }: HeaderMenuProps) => {
             alt="Skane Stags logo"
             width={60}
             height={60}
+            priority
           />
         </div>
       </Link>

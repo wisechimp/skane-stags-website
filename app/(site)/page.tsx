@@ -7,13 +7,12 @@ import Video from "../components/video/video"
 
 const Home = async () => {
   const page = await getPage('home')
-  const { content, mainImage, mainImageAltText } = page
+  console.log(page)
   const latestNews = await (await getNewsItems()).slice(0, 3)
-  console.log(latestNews)
 
   return (
     <div>
-      <Jumbotron image={mainImage} imageAlt={mainImageAltText} content={content} />
+      <Jumbotron data={page} />
       <div className={styles.latestNewsContainer}>
         <h2>Latest News</h2>
         <div className={styles.latestNewsCardsContainer}>
