@@ -28,15 +28,23 @@ const page = {
           title: "Alt Text",
           type: "string",
         },
+        {
+          name: "imagesize",
+          title: "Image Size",
+          type: "array",
+          of: [{ type: "reference", to: { type: "imagesize" } }],
+        },
       ],
     },
     {
       name: "content",
       title: "Content",
       type: "array",
-      of: [{
-        type: "block"
-      }],
+      of: [
+        {
+          type: "block",
+        },
+      ],
     },
   ],
 }

@@ -26,6 +26,8 @@ const getPage = async (slug: string): Promise<Page> => {
       content,
       "mainImage": mainImage.asset->url,
       "mainImageAltText": mainImage.altText,
+      "mainImageHeight": mainImage.imagesize[]->height,
+      "mainImageWidth": mainImage.imagesize[]->width
     }`,
     { slug: slug }
   )
@@ -55,6 +57,8 @@ const getNews = async (slug: string): Promise<Page> => {
       content,
       "mainImage": mainImage.asset->url,
       "mainImageAltText": mainImage.altText,
+      "mainImageHeight": mainImage.imagesize[]->height,
+      "mainImageWidth": mainImage.imagesize[]->width,
       publishedOn
     }`,
     { slug: slug }

@@ -28,6 +28,12 @@ const news = {
           title: "Alt Text",
           type: "string",
         },
+        {
+          name: "imagesize",
+          title: "Image Size",
+          type: "array",
+          of: [{type: 'reference', to: {type: 'imagesize'}}]
+        }
       ],
     },
     {
